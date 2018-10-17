@@ -13,7 +13,11 @@
     "editor.tabSize": 2,
     "editor.detectIndentation": false,
     "files.exclude": {
+      "**/.gitignore": true,
       "**/.vscode": true,
+      "jsconfig.json": true,
+      "Zen-CLI": true,
+      "Zen-CLI.code-workspace": true
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.preferences.importModuleSpecifier": "relative",
