@@ -16,12 +16,10 @@
       "**/.gitignore": true,
       "**/.vscode": true,
       "jsconfig.json": true,
+      "node_modules": true,
+      "package-lock.json": true,
       "Zen-CLI": true,
       "Zen-CLI.code-workspace": true
-    },
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.preferences.importModuleSpecifier": "relative",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "javascript.preferences.importModuleSpecifier": "relative"
+    }
   }
 }
