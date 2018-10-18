@@ -1,10 +1,12 @@
 {
-  "name": "your project name",
+  "name": "your-project-name",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "zen-install": "cd zen-cli && npm install"
+    "zen-install": "cd zen-cli && npm install",
+    "zen-build": "cd zen-cli && node webpack.config.js",
+    "_zen-watch": "cd zen-cli && \"node_modules/.bin/webpack\""
   },
   "keywords": [],
   "author": "",

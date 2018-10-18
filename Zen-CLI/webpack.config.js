@@ -1,1 +1,10 @@
-const DefaultWebpackConfig = require('./config/webpack.config');
+const path = require('path');
+
+
+const userDir = path.resolve( __dirname, '../' );
+
+const userConfig = require('./util/GetUserConfig')( userDir );
+
+console.log(
+  userConfig
+)
