@@ -1,6 +1,3 @@
-require('@moomfe/zenjs');
-
-
 const defaultConfig = require('../config/zen.config');
 
 

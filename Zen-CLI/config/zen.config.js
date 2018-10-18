@@ -12,9 +12,10 @@ module.exports = {
     // 入口文件夹
     entry: 'src/',
     // 出口文件夹
-    output: {
-      path: 'dist/',
-      filename: 'index.[chunkhash].js'
-    }
+    output: 'dist/',
+    // 入口文件名
+    entryFilename: 'index.js',
+    // 出口文件名
+    outputFilename: 'index.[chunkhash].js'
   }
 }
