@@ -20,7 +20,7 @@ userConfig.forEach( config => {
   const WebpackConfig = Object.$assign( {}, WebpackConfigDefault, {
     mode: config.mode,
     output: {
-      filename: `[name]/${ config.outputFilename }`
+      filename: config.outputFilename
     }
   });
 
@@ -35,7 +35,7 @@ userConfig.forEach( config => {
     WebpackConfig,
     WebpackConfigArray
   );
-  
+
 });
 
 module.exports = WebpackConfigArray;

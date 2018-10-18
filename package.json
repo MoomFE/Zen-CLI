@@ -6,7 +6,8 @@
   "scripts": {
     "zen-install": "cd zen-cli && npm install",
     "zen-run": "cd zen-cli && node webpack.config.js",
-    "zen-build": "cd zen-cli && \"node_modules\\.bin\\webpack\""
+    "zen-build": "cd zen-cli && \"node_modules\\.bin\\webpack\"",
+    "zen-watch": "cd zen-cli && \"node_modules\\.bin\\webpack\" --watch"
   },
   "keywords": [],
   "author": "",
