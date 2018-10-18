@@ -1,5 +1,6 @@
 const GetDirFiles = require('./GetDirFiles');
 const fs = require('fs-extra');
+const CreateWebpackConfig = require('./CreateWebpackConfig');
 
 
 module.exports = function RecursiveFile(
@@ -26,12 +27,14 @@ module.exports = function RecursiveFile(
 
     // 入口文件
     if( fileName.toLowerCase() === config.entryFilename ){
-      const NewWebpackConfig = Object.$assign( {}, WebpackConfig );
-
-      NewWebpackConfig.entry[ entry ] = filePath;
-      NewWebpackConfig.output.path = entry.replace( rootEntry, rootOutput );
-
-      WebpackConfigArray.push( NewWebpackConfig );
+      WebpackConfigArray.push(
+        CreateWebpackConfig(
+          rootEntry, rootOutput,
+          entry, filePath,
+          config,
+          WebpackConfig
+        )
+      );
     }
 
   });

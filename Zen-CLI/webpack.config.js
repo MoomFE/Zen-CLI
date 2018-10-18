@@ -1,17 +1,19 @@
 require('@moomfe/zenjs');
 
 const path = require('path');
-const util = require('./util/index')
 
 /** 用户目录 */
 const userDir = path.resolve( __dirname, '../' );
 /** 用户配置集 */
-const userConfig = util.GetUserConfig( userDir );
+const userConfig = require('./util/GetUserConfig')( userDir );
 
 /** 默认 Webpack 配置 */
 const WebpackConfigDefault = require('./config/webpack.config');
 /** 生成的 Webpack 配置 */
 const WebpackConfigArray = [];
+/** 遍历文件夹下所有文件的方法 */
+const RecursiveFile = require('./util/RecursiveFile');
+
 
 // 生成 Webpack 配置
 userConfig.forEach( config => {
@@ -28,7 +30,8 @@ userConfig.forEach( config => {
   const entry = path.resolve( userDir, config.entry );
   const output = path.resolve( userDir, config.output );
 
-  util.RecursiveFile(
+  // 生成 Webpack 配置
+  RecursiveFile(
     entry, output,
     entry,
     config,
@@ -37,5 +40,6 @@ userConfig.forEach( config => {
   );
 
 });
+
 
 module.exports = WebpackConfigArray;
