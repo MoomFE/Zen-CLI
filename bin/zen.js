@@ -3,11 +3,25 @@
 const program = require('commander');
 
 program
-  .version( require( '../package' ).version )
-  .usage( '<command> [options]' );
+  .version(
+    require( '../package.json' ).version,
+    '-v, --version'
+  );
 
 program
   .command('build')
   .action(( name, cmd ) => {
-    console.log( name, cmd );
+    
   });
+
+program
+  .command('watch')
+  .action(( name, cmd ) => {
+    
+  });
+
+program.on('--help', () => {
+  console.log('');
+});
+
+program.parse( process.argv );
