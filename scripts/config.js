@@ -1,18 +1,19 @@
 require('@moomfe/zenjs');
 
 const path = require('path');
+const webpack = require("webpack");
 
 /** 用户目录 */
 const userDir = path.resolve( __dirname, '../' );
 /** 用户配置集 */
-const userConfig = require('./util/GetUserConfig')( userDir );
+const userConfig = require('../util/GetUserConfig')( userDir );
 
 /** 生成的 Webpack 配置 */
 const WebpackConfigArray = [];
 /** 遍历文件夹下所有文件的方法 */
-const RecursiveFile = require('./util/RecursiveFile');
+const RecursiveFile = require('../util/RecursiveFile');
 /** 创建 webpack 配置所用方法 */
-const CreateWebpackConfig = require('./util/CreateWebpackConfig');
+const CreateWebpackConfig = require('../util/CreateWebpackConfig');
 
 
 // 生成 Webpack 配置
@@ -45,4 +46,6 @@ userConfig.forEach( config => {
 });
 
 
-module.exports = WebpackConfigArray;
+module.exports = WebpackConfigArray.map( config => {
+  return webpack( config );
+});

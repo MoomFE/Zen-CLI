@@ -11,13 +11,13 @@ program
 program
   .command('build')
   .action(( name, cmd ) => {
-    
+    require('../scripts/build');
   });
 
 program
   .command('watch')
   .action(( name, cmd ) => {
-    
+    require('../scripts/watch');
   });
 
 program.on('--help', () => {
