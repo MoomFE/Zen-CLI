@@ -18,7 +18,7 @@ module.exports = function( userDir ){
     });
   }else{
     config = [
-      Object.$assign( {}, defaultConfig.config, config.config )
+      Object.$assign( {}, defaultConfig.config, config.config || config )
     ];
   }
 
