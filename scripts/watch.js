@@ -1,5 +1,7 @@
 const config = require('./config');
 
 config.forEach( config => {
-  config.watch();
+  config.watch( {}, ( error, state ) => {
+    
+  });
 });

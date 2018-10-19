@@ -4,7 +4,7 @@ const path = require('path');
 const webpack = require("webpack");
 
 /** 用户目录 */
-const userDir = path.resolve( __dirname, '../' );
+const userDir = path.resolve( __dirname, '../../../../' );
 /** 用户配置集 */
 const userConfig = require('../util/GetUserConfig')( userDir );
 
