@@ -4,8 +4,8 @@ const CreateWebpackConfig = require('./CreateWebpackConfig');
 
 
 module.exports = function RecursiveFile(
-  rootEntry, rootOutput,
-  entry, config,
+  entry,
+  config,
   WebpackConfig, WebpackConfigArray
 ){
   /** 该文件夹下所有文件及文件夹 */
@@ -19,21 +19,19 @@ module.exports = function RecursiveFile(
     // 当前路径是文件夹, 递归继续向内查找
     if( fs.statSync( filePath ).isDirectory() ){
       return RecursiveFile(
-        rootEntry, rootOutput,
-        filePath, config,
+        filePath,
+        config,
         WebpackConfig, WebpackConfigArray
       );
     }
 
     // 入口文件
     if( fileName.toLowerCase() === config.entryFilename ){
-      WebpackConfigArray.push(
-        CreateWebpackConfig(
-          rootEntry, rootOutput,
-          entry, filePath,
-          config,
-          WebpackConfig
-        )
+      // 生成新的 webpack 配置
+      CreateWebpackConfig(
+        entry, filePath,
+        config,
+        WebpackConfig, WebpackConfigArray
       );
     }
 

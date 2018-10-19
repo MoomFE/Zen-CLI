@@ -11,13 +11,20 @@ module.exports = {
     // 模式
     mode: 'development', // production
 
+    // 入口文件地址 ( 必须使用完整文件路径 )
+    // 单独打包一个文件时使用, 使用时将会忽略 [ 'entry', 'output' ] 配置项, 必须和 to 配套使用
+    from: '',
+    // 输出文件地址 ( 必须使用完整文件路径 )
+    // 必须和 from 配套使用
+    to: '',
+
     // 入口文件夹
     entry: 'src/',
-    // 出口文件夹
+    // 输出文件夹
     output: 'dist/',
     // 入口文件名
     entryFilename: 'index.js',
-    // 出口文件名
+    // 输出文件名
     outputFilename: 'index.[chunkhash].js',
 
     // 是否使用 "clean-webpack-plugin" 清理输出目录

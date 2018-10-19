@@ -13,6 +13,8 @@ const WebpackConfigDefault = require('./config/webpack.config');
 const WebpackConfigArray = [];
 /** 遍历文件夹下所有文件的方法 */
 const RecursiveFile = require('./util/RecursiveFile');
+/** 创建 webpack 配置所用方法 */
+const CreateWebpackConfig = require('./util/CreateWebpackConfig');
 
 
 // 生成 Webpack 配置
@@ -26,14 +28,26 @@ userConfig.forEach( config => {
     }
   });
 
+  // 处理单个文件
+  if( config.from ){
+    // 处理路径到正确的格式
+    config.from = path.resolve( userDir, config.from );
+    config.to = path.resolve( userDir, config.to );
+
+    return CreateWebpackConfig(
+      path.dirname( config.from ), config.from,
+      config,
+      WebpackConfig, WebpackConfigArray
+    );
+  }
+
   /** 入口文件夹 */
-  const entry = path.resolve( userDir, config.entry );
-  const output = path.resolve( userDir, config.output );
+  config.entry = path.resolve( userDir, config.entry );
+  config.output = path.resolve( userDir, config.output );
 
   // 生成 Webpack 配置
   RecursiveFile(
-    entry, output,
-    entry,
+    config.entry,
     config,
     WebpackConfig,
     WebpackConfigArray

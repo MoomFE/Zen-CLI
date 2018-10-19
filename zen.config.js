@@ -1,7 +1,8 @@
 
 
 module.exports = {
-  pipe: [
-    
-  ]
+  config: {
+    from: 'src/index.js',
+    to: 'dist/index.js'
+  }
 }
