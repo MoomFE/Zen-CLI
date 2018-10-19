@@ -27,10 +27,10 @@ module.exports = {
     // 入口文件名
     entryFilename: 'index.js',
     // 输出文件名
-    outputFilename: 'index.[chunkhash].js',
+    outputFilename: 'index.js', // index.[chunkhash].js'
 
     // 是否使用 "clean-webpack-plugin" 清理输出目录
-    PluginCleanWebpackPlugin: true,
+    PluginCleanWebpackPlugin: false,
     // 插件 "clean-webpack-plugin" 的配置
     PluginCleanWebpackPluginOptions: {
       // 允许清理根目录以外的文件夹
