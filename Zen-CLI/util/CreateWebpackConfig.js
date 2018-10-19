@@ -1,5 +1,6 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const WebpackConfigDefault = require('../config/webpack.config');
 
 
 /**
@@ -13,19 +14,20 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = function(
   entry, filePath,
   config,
-  WebpackConfig, WebpackConfigArray
+  WebpackConfigArray
 ){
   /**
    * 当前文件的 Webpack 配置
    */
-  const NewWebpackConfig = Object.$assign( {}, WebpackConfig );
+  const NewWebpackConfig = Object.$assign( {}, WebpackConfigDefault, {
+    mode: config.mode
+  });
   /**
    * Webpack 插件列表
    */
   const plugins = NewWebpackConfig.plugins = NewWebpackConfig.plugins || [];
 
   // 入口信息
-  NewWebpackConfig.entry = {};
   NewWebpackConfig.entry[ entry ] = filePath;
 
   // 处理单个文件
@@ -35,6 +37,7 @@ module.exports = function(
     NewWebpackConfig.output.path = path.dirname( config.to );
   }else{
     // 出口信息
+    NewWebpackConfig.output.filename = config.outputFilename;
     NewWebpackConfig.output.path = entry.replace( config.entry, config.output );
   }
 

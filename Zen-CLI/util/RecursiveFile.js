@@ -6,7 +6,7 @@ const CreateWebpackConfig = require('./CreateWebpackConfig');
 module.exports = function RecursiveFile(
   entry,
   config,
-  WebpackConfig, WebpackConfigArray
+  WebpackConfigArray
 ){
   /** 该文件夹下所有文件及文件夹 */
   const files = GetDirFiles( entry );
@@ -21,7 +21,7 @@ module.exports = function RecursiveFile(
       return RecursiveFile(
         filePath,
         config,
-        WebpackConfig, WebpackConfigArray
+        WebpackConfigArray
       );
     }
 
@@ -31,7 +31,7 @@ module.exports = function RecursiveFile(
       CreateWebpackConfig(
         entry, filePath,
         config,
-        WebpackConfig, WebpackConfigArray
+        WebpackConfigArray
       );
     }
 
