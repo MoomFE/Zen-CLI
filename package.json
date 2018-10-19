@@ -1,15 +1,19 @@
 {
-  "name": "your-project-name",
-  "version": "1.0.0",
+  "name": "@moomfe/zen-cli",
+  "version": "1.0.0-beta.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "zen-install": "cd zen-cli && npm install",
-    "zen-run": "cd zen-cli && node webpack.config.js",
-    "zen-build": "cd zen-cli && \"node_modules\\.bin\\webpack\"",
-    "zen-watch": "cd zen-cli && \"node_modules\\.bin\\webpack\" --watch"
-  },
+  "scripts": {},
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Wei Zhang",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@moomfe/zenjs": "^3.3.9",
+    "clean-webpack-plugin": "^0.1.19",
+    "fs-extra": "^7.0.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
 }

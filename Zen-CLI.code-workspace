@@ -1,12 +1,8 @@
 {
-	"folders": [
+  "folders": [
     {
       "name": "Zen-CLI",
       "path": "."
-    },
-		{
-      "name": "User",
-			"path": "../"
     }
   ],
   "settings": {
