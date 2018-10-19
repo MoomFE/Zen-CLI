@@ -20,7 +20,8 @@ module.exports = function(
    * 当前文件的 Webpack 配置
    */
   const NewWebpackConfig = Object.$assign( {}, WebpackConfigDefault, {
-    mode: config.mode
+    mode: config.mode === true || config.mode === 'production' ? 'production'
+                                                               : 'development'
   });
   /**
    * Webpack 插件列表

@@ -11,7 +11,8 @@ module.exports = {
   config: {
 
     // 模式
-    mode: 'development', // production
+    // [ 'production', true ] || [ 'development', false ]
+    mode: 'production',
 
     // 入口文件地址 ( 必须使用完整文件路径 )
     // 单独打包一个文件时使用, 使用时将会忽略 [ 'entry', 'output' ] 配置项, 必须和 to 配套使用
