@@ -7,10 +7,6 @@
     {
       "name": "Test",
       "path": "test"
-    },
-    {
-      "name": "Test Zen-CLI",
-      "path": "test\\node_modules\\@moomfe\\zen-cli"
     }
   ],
   "settings": {

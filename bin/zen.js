@@ -20,6 +20,22 @@ program
     require('../scripts/watch');
   });
 
+/* ------ Private ------ */
+program
+  .command('private-build')
+  .action(( name, cmd ) => {
+    global.isPrivateCommand = true;
+    require('../scripts/build');
+  });
+
+program
+  .command('private-watch')
+  .action(( name, cmd ) => {
+    global.isPrivateCommand = true;
+    require('../scripts/watch');
+  });
+/* ------ Private ------ */
+
 program.on('--help', () => {
   console.log('');
 });
