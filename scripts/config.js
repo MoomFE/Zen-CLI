@@ -1,7 +1,6 @@
 require('@moomfe/zenjs');
 
 const path = require('path');
-const webpack = require("webpack");
 
 /** 用户目录 */
 const userDir = path.resolve( __dirname, '../../../../' );
@@ -46,6 +45,4 @@ userConfig.forEach( config => {
 });
 
 
-module.exports = WebpackConfigArray.map( config => {
-  return webpack( config );
-});
+module.exports = WebpackConfigArray;

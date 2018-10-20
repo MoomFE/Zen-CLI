@@ -1,6 +1,6 @@
 {
   "name": "@moomfe/zen-cli",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "",
   "scripts": {},
   "keywords": [],
@@ -12,6 +12,7 @@
     "@babel/preset-env": "^7.1.0",
     "@moomfe/zenjs": "^3.3.9",
     "clean-webpack-plugin": "^0.1.19",
+    "colors": "^1.3.2",
     "commander": "^2.19.0",
     "fs-extra": "^7.0.0",
     "webpack": "^4.20.2",
