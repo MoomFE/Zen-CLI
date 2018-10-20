@@ -1,11 +1,17 @@
 const WebpackConfigArray = require('./config');
-const printInfo = require('../util/PrintInfo');
+const print = require('../util/PrintInfo');
 const webpack = require("webpack");
 
 
 WebpackConfigArray.forEach( config => {
-  webpack( config, ( err, stats ) => {
-    printInfo( err, stats );
+  const compiler = webpack( config );
+
+  compiler.hooks.compile.tap( 'beforeRun', () => {
+    print.run( config );
+  });
+
+  compiler.run(( err, stats ) => {
+    print.done( err, stats );
   });
 });
 
