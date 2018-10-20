@@ -1,16 +1,9 @@
-const WebpackConfigArray = require('./config');
-const print = require('../util/PrintInfo');
-const webpack = require("webpack");
+const CreateCompilers = require('../util/CreateCompilers');
 
 
-WebpackConfigArray.forEach( config => {
-  const compiler = webpack( config );
+const compilers = CreateCompilers( false );
 
-  compiler.hooks.compile.tap( 'beforeRun', () => {
-    print.run( config );
-  });
 
-  compiler.watch( {}, ( err, stats ) => {
-    print.done( err, stats );
-  });
+compilers.watch( {}, ( err, stats ) => {
+  
 });

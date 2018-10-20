@@ -1,5 +1,5 @@
 
 
 module.exports = {
-  outputFilename: '123.js'
+  mode: false
 }

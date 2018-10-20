@@ -10,6 +10,6 @@
   "author": "Wei Zhang",
   "license": "MIT",
   "dependencies": {
-    "@moomfe/zen-cli": "^1.0.0-beta.5"
+    "@moomfe/zen-cli": "^1.0.0-beta.6"
   }
 }
