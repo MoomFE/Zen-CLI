@@ -32,10 +32,10 @@ module.exports = {
 
     // 是否使用 "clean-webpack-plugin" 清理输出文件夹
     // 默认未开启, 请根据使用情况自行开启
-    PluginCleanWebpackPlugin: false,
+    Plugin_CleanWebpackPlugin: false,
     // 插件 "clean-webpack-plugin" 的配置
     // 需要开启 PluginCleanWebpackPlugin 配置项
-    PluginCleanWebpackPluginOptions: {
+    Plugin_CleanWebpackPluginOptions: {
       // 允许清理根目录以外的文件夹
       allowExternal: true,
       // 不显示在控制台
