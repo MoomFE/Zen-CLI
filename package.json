@@ -1,6 +1,6 @@
 {
   "name": "@moomfe/zen-cli",
-  "version": "1.0.0-beta.11",
+  "version": "1.0.0-beta.12",
   "description": "",
   "scripts": {},
   "keywords": [],
@@ -11,6 +11,7 @@
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
+    "@babel/runtime": "^7.1.2",
     "@moomfe/zenjs": "^3.3.9",
     "babel-loader": "^8.0.4",
     "clean-webpack-plugin": "^0.1.19",
