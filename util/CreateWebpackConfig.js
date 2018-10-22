@@ -60,16 +60,6 @@ module.exports = function(
     NewWebpackConfig.module.rules[0].use.options.presets[0].push({ useBuiltIns: 'usage' });
   }
 
-  // 输出文件顶部添加 banner
-  if( config.banner ){
-    plugins.push(
-      new webpack.BannerPlugin({
-        banner: config.banner,
-        raw: !config.bannerIsComment
-      })
-    );
-  }
-
   WebpackConfigArray.push(
     NewWebpackConfig
   );

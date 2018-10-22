@@ -33,6 +33,7 @@ module.exports = {
     // 在打包好的文件的块的外部的最顶部插入一段内容
     banner: null,
     // 插入的内容是否是注释, 如果为 true, 将自动添加段落注释, 否则将原样输出
+    // 暂时不可用
     bannerIsComment: false,
 
     // 是否使用 "clean-webpack-plugin" 清理输出文件夹

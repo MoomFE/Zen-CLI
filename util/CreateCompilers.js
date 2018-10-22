@@ -1,7 +1,10 @@
 const fs = require('fs-extra');
+
 const webpack = require('webpack');
 const ConfigArray = require('../scripts/config');
 const print = require('./PrintInfo');
+
+const Writefile = require('./CreateCompilers/WriteFile');
 
 /**
  * [ config, config, false, ... ]
@@ -21,6 +24,10 @@ module.exports = function( isBuilder ){
   compilers.compilers.forEach(( compiler, index ) => {
     const config = ConfigArray[ index ];
 
+    // 文件写入相关
+    Writefile( compiler, config );
+
+    // 进入编译时, 进行提示
     compiler.hooks[ isBuilder ? 'run' : 'watchRun' ].tap( 'print', () => {
       if( !index || doneStats[ index - 1 ] === true ) runSign( index, config );
       else{
@@ -28,23 +35,13 @@ module.exports = function( isBuilder ){
       }
     });
 
+    // 编译完成后, 进行提示
     compiler.hooks.done.tap( 'print', stats => {
       if( runStats[ index ] === true ) doneSign( index, stats );
       else{
         doneStats[ index ] = stats;
       }
     });
-
-    // 如果文件上锁, 尝试解锁文件
-    if( config._zen_config_.forcedWrite ){
-      compiler.hooks.emit.tap( 'chmod', compilation => {
-        const output = config.output.path + '\\' + Object.keys( compilation.assets )[0];
-
-        try {
-          fs.chmodSync( output, 0o765 );
-        }catch(error){}
-      });
-    }
 
   });
 

@@ -3,7 +3,9 @@
 module.exports = {
 
   entry: {},
-  output: {},
+  output: {
+    pathinfo: false
+  },
 
   module: {
     rules: [
