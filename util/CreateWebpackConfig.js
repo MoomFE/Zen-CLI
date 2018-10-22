@@ -49,6 +49,10 @@ module.exports = function(
     );
   }
 
+  if( config.autoPolyfill ){
+    NewWebpackConfig.module.rules[0].use.options.presets[0].push({ useBuiltIns: 'usage' });
+  }
+
   WebpackConfigArray.push(
     NewWebpackConfig
   );

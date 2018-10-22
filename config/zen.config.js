@@ -42,6 +42,10 @@ module.exports = {
       verbose: false,
       // 监听模式下也依旧清空文件夹
       watch: true
-    }
+    },
+
+    // 是否根据代码自动引入相应 polyfill
+    autoPolyfill: true
+
   }
 }
