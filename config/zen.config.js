@@ -50,7 +50,10 @@ module.exports = {
     },
 
     // 是否根据代码自动引入相应 polyfill
-    autoPolyfill: true
+    autoPolyfill: true,
+
+    // 输出文件时是否强制写入 ( 输出文件权限为只读时, 尝试强制解锁并写入 )
+    forcedWrite: true
 
   }
 }

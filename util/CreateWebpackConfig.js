@@ -29,6 +29,11 @@ module.exports = function(
    */
   const plugins = NewWebpackConfig.plugins = NewWebpackConfig.plugins || [];
 
+  // 存储原始配置
+  Object.defineProperty( NewWebpackConfig, '_zen_config_', {
+    value: config
+  });
+
   // 入口信息
   NewWebpackConfig.entry[ entry ] = filePath;
 
