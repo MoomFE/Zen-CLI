@@ -1,4 +1,4 @@
-const CreateCompilers = require('../util/CreateCompilers');
+const CreateCompilers = require('../util/CreateCompilers/index');
 
 
 const compilers = CreateCompilers( true );
