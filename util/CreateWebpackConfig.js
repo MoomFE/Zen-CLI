@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const WebpackConfigDefault = require('../config/webpack.config');
 
@@ -49,8 +50,19 @@ module.exports = function(
     );
   }
 
+  // 自动添加 polyfill
   if( config.autoPolyfill ){
     NewWebpackConfig.module.rules[0].use.options.presets[0].push({ useBuiltIns: 'usage' });
+  }
+
+  // 输出文件顶部添加 banner
+  if( config.banner ){
+    plugins.push(
+      new webpack.BannerPlugin({
+        banner: config.banner,
+        raw: !config.bannerIsComment
+      })
+    );
   }
 
   WebpackConfigArray.push(
