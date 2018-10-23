@@ -1,3 +1,4 @@
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
@@ -9,11 +10,10 @@ module.exports = {
 
   module: {
     rules: [
-
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use:{
+        use: {
           loader: 'babel-loader',
           options: {
             presets: [
@@ -22,9 +22,24 @@ module.exports = {
             plugins: [ '@babel/plugin-transform-runtime' ]
           }
         }
+      }, {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            { loader: 'css-loader' },
+            {
+              loader: 'postcss-loader',
+              options: { plugins: [ require('autoprefixer') ] }
+            }
+          ]
+        })
       }
-
     ]
-  }
+  },
+
+  plugins: [
+    new ExtractTextPlugin('index.css')
+  ]
 
 };

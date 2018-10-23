@@ -1,5 +1,5 @@
 
 
 module.exports = {
-  mode: true
+  mode: false
 }

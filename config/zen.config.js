@@ -53,7 +53,10 @@ module.exports = {
     autoPolyfill: true,
 
     // 输出文件时是否强制写入 ( 输出文件权限为只读时, 尝试强制解锁并写入 )
-    forcedWrite: true
+    forcedWrite: true,
+
+    // 解析 vue 单文件组件
+    // useVue: false
 
   }
 }

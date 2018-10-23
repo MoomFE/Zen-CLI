@@ -1,8 +1,8 @@
 const path = require('path');
-const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const WebpackConfigDefault = require('../config/webpack.config');
 
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 /**
  * 创建 webpack 配置
@@ -59,6 +59,17 @@ module.exports = function(
   if( config.autoPolyfill ){
     NewWebpackConfig.module.rules[0].use.options.presets[0].push({ useBuiltIns: 'usage' });
   }
+
+  // 使用 vue
+  // if( config.useVue ){
+  //   NewWebpackConfig.module.rules.push({
+  //     test: /\.vue$/,
+  //     loader: 'vue-loader'
+  //   });
+  //   plugins.push(
+  //     new VueLoaderPlugin()
+  //   );
+  // }
 
   WebpackConfigArray.push(
     NewWebpackConfig
