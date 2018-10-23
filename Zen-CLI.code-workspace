@@ -20,6 +20,8 @@
       "**/node_modules": true,
       "**/package-lock.json": true,
       "**/Zen-CLI.code-workspace": true,
+      "bin": true,
+      "scripts": true,
       "test": true
     }
   }
