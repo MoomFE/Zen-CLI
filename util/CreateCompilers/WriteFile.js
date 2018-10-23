@@ -33,14 +33,28 @@ function Chmod( config, path ){
   }
 }
 
-function ReadFile( config, path, memoryFS ){
-  let data = memoryFS.readFileSync( path );
+function GetBanner( config ){
+  let banner = config.banner;
 
-  if( config.banner ){
-    data = `${ config.banner }\n\n${ data }`;
+  if( banner ){
+    if( config.bannerIsComment ){
+      banner = banner.$replaceAll( '*/', '*\\/' );
+      banner = banner.split(/\r\n|\r|\n/);
+      banner = banner.map( line => ' * ' + line );
+      banner = [ '/*!', ' */' ].$concatTo( 1, banner ).join('\n');
+    }
+
+    banner += '\n\n';
   }
 
-  return data;
+  return banner || '';
+}
+
+function ReadFile( config, path, memoryFS ){
+  const data = memoryFS.readFileSync( path );
+  const banner = GetBanner( config );
+
+  return banner + data;
 }
 
 function OutputFile( config, path, memoryFS ){
