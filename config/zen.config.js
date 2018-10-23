@@ -35,6 +35,16 @@ module.exports = {
     // 插入的内容是否是注释, 如果为 true, 将自动添加段落注释, 否则将原样输出
     bannerIsComment: false,
 
+    // 将代码内导入的 css 内置在 js 中
+    // 否则将 css 导出为 css 文件
+    builtInCss: true,
+    // 插件 "extract-text-webpack-plugin" 的配置项
+    // 需要关闭 builtInCss 配置项
+    Plugin_ExtractTextPluginOptions: {
+      filename: 'index.css',
+      allChunks: true
+    },
+
     // 是否使用 "clean-webpack-plugin" 清理输出文件夹
     // 默认未开启, 请根据使用情况自行开启
     Plugin_CleanWebpackPlugin: false,

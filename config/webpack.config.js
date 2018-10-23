@@ -22,24 +22,10 @@ module.exports = {
             plugins: [ '@babel/plugin-transform-runtime' ]
           }
         }
-      }, {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            { loader: 'css-loader' },
-            {
-              loader: 'postcss-loader',
-              options: { plugins: [ require('autoprefixer') ] }
-            }
-          ]
-        })
       }
     ]
   },
 
-  plugins: [
-    new ExtractTextPlugin('index.css')
-  ]
+  plugins: []
 
 };

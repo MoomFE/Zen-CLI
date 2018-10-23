@@ -31,5 +31,7 @@ const ExternalProcessing = {
   // 插件 - 清空出口文件夹
   PluginCleanWebpackPlugin: require('./CreateWebpackConfig/PluginCleanWebpackPlugin'),
   // 自动添加 polyfill
-  autoPolyfill: require('./CreateWebpackConfig/autoPolyfill')
+  autoPolyfill: require('./CreateWebpackConfig/autoPolyfill'),
+  // 处理 css
+  builtInCss: require('./CreateWebpackConfig/builtInCss')
 };
