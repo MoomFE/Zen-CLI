@@ -29,7 +29,7 @@ module.exports = function(
 
 const ExternalProcessing = {
   // 插件 - 清空出口文件夹
-  PluginCleanWebpackPlugin: require('./CreateWebpackConfig/PluginCleanWebpackPlugin'),
+  Plugin_CleanWebpackPlugin: require('./CreateWebpackConfig/Plugin_CleanWebpackPlugin'),
   // 自动添加 polyfill
   autoPolyfill: require('./CreateWebpackConfig/autoPolyfill'),
   // 处理 css

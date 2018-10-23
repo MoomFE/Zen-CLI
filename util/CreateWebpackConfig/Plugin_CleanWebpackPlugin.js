@@ -2,11 +2,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 module.exports = function( NewWebpackConfig, config ){
-  if( config.PluginCleanWebpackPlugin ){
+  if( config.Plugin_CleanWebpackPlugin ){
     NewWebpackConfig.plugins.push(
       new CleanWebpackPlugin(
         [ NewWebpackConfig.output.path ],
-        config.PluginCleanWebpackPluginOptions
+        config.Plugin_CleanWebpackPluginOptions
       )
     );
   }
