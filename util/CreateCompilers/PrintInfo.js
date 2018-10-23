@@ -13,5 +13,4 @@ module.exports = function( compiler, webpackConfig, isBuilder ){
     print.done( webpackConfig, stats );
   });
 
-  // 编译时错误
 }

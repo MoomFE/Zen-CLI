@@ -1,10 +1,10 @@
-const webpack = require('webpack');
 const ConfigArray = require('../../scripts/config');
+
+const webpack = require('webpack');
+const compilers = webpack( ConfigArray );
 
 const Writefile = require('./WriteFile');
 const PrintInfo = require('./PrintInfo');
-
-const compilers = webpack( ConfigArray );
 
 
 module.exports = function( isBuilder ){
