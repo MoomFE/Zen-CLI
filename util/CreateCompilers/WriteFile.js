@@ -63,6 +63,6 @@ function OutputFile( config, path, memoryFS ){
   try {
     fs.outputFileSync( path, data );
   } catch (error) {
-    // 错误处理暂未处理
+    throw error;
   }
 }

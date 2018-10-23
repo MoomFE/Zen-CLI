@@ -31,6 +31,11 @@ module.exports = {
     console.log(`- Time    : ${ time.green }`);
     console.log(`- Size    : ${ size.green }`);
     console.log(`------------------------------------\n`);
+  },
+
+  error( error ){
+    console.error( error );
+    console.log( '\n' );
   }
 
 };

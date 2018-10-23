@@ -10,6 +10,15 @@ module.exports = function( compiler, webpackConfig, isBuilder ){
 
   // 编译完成后, 进行提示
   compiler.hooks.done.tap( 'print', stats => {
+
+    if( stats.hasErrors() ){
+      const info = stats.toJson();
+
+      return print.error(
+        info.errors.join('\n')
+      );
+    }
+
     print.done( webpackConfig, stats );
   });
 
