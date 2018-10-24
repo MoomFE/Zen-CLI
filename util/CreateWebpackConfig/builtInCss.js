@@ -2,11 +2,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = function( NewWebpackConfig, config ){
-  const rules = NewWebpackConfig.module.rules;
 
   // 将 css 内置在 js 中
   if( config.builtInCss ){
-    return rules.push(
+    return NewWebpackConfig.module.rules.push(
       GetRule( config )
     );
   }
@@ -15,7 +14,7 @@ module.exports = function( NewWebpackConfig, config ){
     new ExtractTextPlugin( config.Plugin_ExtractTextPluginOptions )
   );
 
-  rules.push(
+  NewWebpackConfig.module.rules.push(
     GetRule2( config )
   );
 }
@@ -24,10 +23,8 @@ module.exports = function( NewWebpackConfig, config ){
 function GetPostcssLoader(){
   return {
     loader: 'postcss-loader',
-    plugins: {
-      plugins: [
-        require('autoprefixer')
-      ]
+    options: {
+      plugins: [ require('autoprefixer') ]
     }
   };
 }
@@ -59,5 +56,8 @@ function GetRule2( config ){
     options.use.unshift('vue-style-loader');
   }
 
-  return ExtractTextPlugin.extract( options );
+  return {
+    test: /\.css$/,
+    use: ExtractTextPlugin.extract( options )
+  };
 }
