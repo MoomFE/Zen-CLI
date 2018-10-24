@@ -2,52 +2,62 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = function( NewWebpackConfig, config ){
-  const options = {
-    test: /\.css$/,
-    use: [
-      'style-loader', 'css-loader',
-      GetPostcssLoader()
-    ]
-  };
+  const rules = NewWebpackConfig.module.rules;
 
-  // Vue 相关
-  if( config.useVue ){
-    options.use.unshift('vue-style-loader');
-  }
-
-  // 将 css 提取到文件
-  if( !config.builtInCss ){
-
-    const use = {
-      fallback: 'style-loader',
-      use: [
-        'css-loader',
-        GetPostcssLoader()
-      ]
-    };
-
-    // Vue 相关
-    if( config.useVue ){
-      use.use.unshift('vue-style-loader');
-    }
-
-    options.use = ExtractTextPlugin.extract( use );
-
-    NewWebpackConfig.plugins.push(
-      new ExtractTextPlugin( config.Plugin_ExtractTextPluginOptions )
+  // 将 css 内置在 js 中
+  if( config.builtInCss ){
+    return rules.push(
+      GetRule( config )
     );
-
   }
 
-  NewWebpackConfig.module.rules.push( options );
+  NewWebpackConfig.plugins.push(
+    new ExtractTextPlugin( config.Plugin_ExtractTextPluginOptions )
+  );
+
+  rules.push(
+    GetRule2( config )
+  );
 }
 
 
 function GetPostcssLoader(){
   return {
     loader: 'postcss-loader',
-    options: {
-      plugins: [ require('autoprefixer') ]
+    plugins: {
+      plugins: [
+        require('autoprefixer')
+      ]
     }
   };
+}
+
+function GetRule( config ){
+  const rule = {
+    test: /\.css$/,
+    use: [
+      'style-loader', 'css-loader', GetPostcssLoader()
+    ]
+  };
+
+  if( config.useVue ){
+    rule.use.unshift('vue-style-loader');
+  }
+
+  return rule;
+}
+
+function GetRule2( config ){
+  const options = {
+    fallback: 'style-loader',
+    use: [
+      'css-loader', GetPostcssLoader()
+    ]
+  };
+
+  if( config.useVue ){
+    options.use.unshift('vue-style-loader');
+  }
+
+  return ExtractTextPlugin.extract( options );
 }
