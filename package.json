@@ -1,6 +1,6 @@
 {
   "name": "@moomfe/zen-cli",
-  "version": "1.0.0-beta.19",
+  "version": "1.0.0-beta.20",
   "description": "",
   "scripts": {},
   "keywords": [],
@@ -24,6 +24,8 @@
     "memory-fs": "^0.4.1",
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.1",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
     "webpack": "^4.20.2"
   },
   "bin": {

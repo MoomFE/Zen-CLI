@@ -15,7 +15,7 @@ module.exports = function(
   const NewWebpackConfig = require('./CreateWebpackConfig/index')( config, entry, filePath );
 
   // 搜索可配置项进行配置
-  config.$each(( name, options ) => {
+  config.$each( name => {
     const fn = ExternalProcessing[ name ];
 
     if( fn ){
@@ -33,5 +33,7 @@ const ExternalProcessing = {
   // 自动添加 polyfill
   autoPolyfill: require('./CreateWebpackConfig/autoPolyfill'),
   // 处理 css
-  builtInCss: require('./CreateWebpackConfig/builtInCss')
+  builtInCss: require('./CreateWebpackConfig/builtInCss'),
+  // 处理 Vue 单文件组件
+  useVue: require('./CreateWebpackConfig/useVue')
 };
