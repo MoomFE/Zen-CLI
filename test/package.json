@@ -10,6 +10,8 @@
   "author": "Wei Zhang",
   "license": "MIT",
   "dependencies": {
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   }
 }

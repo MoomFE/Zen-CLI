@@ -34,6 +34,8 @@ const ExternalProcessing = {
   autoPolyfill: require('./CreateWebpackConfig/autoPolyfill'),
   // 处理 css
   builtInCss: require('./CreateWebpackConfig/builtInCss'),
-  // 处理 Vue 单文件组件
-  useVue: require('./CreateWebpackConfig/useVue')
+  // 处理 Vue 单文件组件 ( .vue )
+  useVue: require('./CreateWebpackConfig/useVue'),
+  // 处理 React 单文件组件 ( .jsx )
+  useReact: require('./CreateWebpackConfig/useReact')
 };
