@@ -69,7 +69,14 @@ module.exports = {
     useVue: false,
 
     // 解析 React 单文件组件 ( .jsx )
-    useReact: false
+    useReact: false,
+
+    // 事件回调
+    on: {
+      // webpack 配置文件创建完成后调用, 可对 webpack 配置进行修改
+      // ConfigCreated( WebpackConfig, ZenConfig )
+      ConfigCreated: null
+    }
 
   }
 }

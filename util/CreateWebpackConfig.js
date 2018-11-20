@@ -23,6 +23,12 @@ module.exports = function(
     }
   });
 
+  // 执行事件回调
+  if( config.on && config.on.ConfigCreated ){
+    config.on.ConfigCreated( NewWebpackConfig, config );
+  }
+
+  // 添加配置到队列
   WebpackConfigArray.push( NewWebpackConfig );
 }
 
