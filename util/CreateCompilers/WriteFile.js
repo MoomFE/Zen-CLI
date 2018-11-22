@@ -25,6 +25,9 @@ module.exports = function( compiler, webpackConfig ){
 }
 
 
+/**
+ * 尝试强制解锁文件只读状态
+ */
 function Chmod( config, path ){
   if( config.forcedWrite ){
     try {
@@ -33,30 +36,50 @@ function Chmod( config, path ){
   }
 }
 
-function GetBanner( config ){
+/**
+ * 格式化用户定义的 banner 后返回
+ */
+function GetBanner( config, path ){
   let banner = config.banner;
+  let success = true;
 
-  if( banner ){
-    if( config.bannerIsComment ){
-      banner = banner.$replaceAll( '*/', '*\\/' );
-      banner = banner.split(/\r\n|\r|\n/);
-      banner = banner.map( line => ' * ' + line );
-      banner = [ '/*!', ' */' ].$concatTo( 1, banner ).join('\n');
-    }
+  // 验证文件类型
+  config.bannerOutputTypes.$each( reg => {
+    return success = reg.test( path );
+  });
 
-    banner += '\n\n';
+  // 是不需要添加 banner 的文件类型
+  if( !success ){
+    return '';
   }
 
-  return banner || '';
+  // 使用注释对 banner 进行包裹
+  if( config.bannerIsComment ){
+    banner = banner.$replaceAll( '*/', '*\\/' );
+    banner = banner.split( /\r\n|\r|\n/ );
+    banner = banner.map( line => ' * ' + line );
+    banner = [ '/*!', ' */' ].$concatTo( 1, banner ).join('\n');
+  }
+
+  return banner + '\n\n';
 }
 
+/**
+ * 读取文件并且导入用户传入的 banner
+ */
 function ReadFile( config, path, memoryFS ){
   const data = memoryFS.readFileSync( path );
-  const banner = GetBanner( config );
 
-  return banner + data;
+  if( config.banner ){
+    return GetBanner( config, path ) + data;
+  }
+
+  return data;  
 }
 
+/**
+ * 输出文件到系统中
+ */
 function OutputFile( config, path, memoryFS ){
   const data = ReadFile( config, path, memoryFS );
 

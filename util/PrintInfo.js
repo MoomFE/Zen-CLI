@@ -28,11 +28,11 @@ module.exports = {
     console.log(`- Input   : ${ input.green }`);
     options.assets.$each(( options, index ) => {
       console.log(
-        `- ${ index ? '      ' : 'Output' }  : ${ output.green }${ options.name.green }`,
-        `- ( ${ getSize( options.size ).green } )`
+        `- ${ index ? '      ' : 'Output' }  : ${ output.green }${ options.name.green } - ( ${ getSize( options.size ).green } )`,
       );
     });
     console.log(`- Built at: ${ date.green }`);
+    console.log(`- Mode    : ${ config.mode.green }`);
     console.log(`- Time    : ${ time.green }`);
     console.log(`------------------------------------\n`);
   },

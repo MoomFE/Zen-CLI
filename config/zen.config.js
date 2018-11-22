@@ -12,7 +12,7 @@ module.exports = {
 
     // 模式
     // [ 'production', true ] || [ 'development', false ]
-    mode: 'production',
+    mode: 'development',
 
     // 入口文件地址 ( 必须使用完整文件路径 )
     // 单独打包一个文件时使用, 使用时将会忽略 [ 'entry', 'output' ] 配置项, 必须和 to 配套使用
@@ -30,10 +30,12 @@ module.exports = {
     // 输出文件名
     outputFilename: 'index.js', // index.[chunkhash].js'
 
-    // 在打包好的文件的块的外部的最顶部插入一段内容
+    // 在打包好的文件的块的外部的最顶部插入的一段内容
     banner: null,
+    // 在指定类型文件插入内容, 可为数组: [ /\.js|css$/, ... ]
+    bannerOutputTypes: /\.js|css$/,
     // 插入的内容是否是注释, 如果为 true, 将自动添加段落注释, 否则将原样输出
-    bannerIsComment: false,
+    bannerIsComment: true,
 
     // 将代码内导入的 css 内置在 js 中
     // 否则将 css 导出为 css 文件
