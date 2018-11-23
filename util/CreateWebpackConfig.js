@@ -34,18 +34,13 @@ module.exports = function(
 
 
 const ExternalProcessing = {
-  // 打包模式
   mode: require('./CreateWebpackConfig/mode'),
-  // 自动添加 polyfill
   autoPolyfill: require('./CreateWebpackConfig/autoPolyfill'),
-  // 处理 css
   builtInCss: require('./CreateWebpackConfig/builtInCss'),
-  // 处理 Vue 单文件组件 ( .vue )
-  useVue: require('./CreateWebpackConfig/useVue'),
-  // 处理 React 单文件组件 ( .jsx )
-  useReact: require('./CreateWebpackConfig/useReact'),
-  // 无 banner 时删除无用数据
   banner: require('./CreateWebpackConfig/banner'),
-  // 处理 cleanMatching 为数组格式, 方便之后处理
-  cleanOutputDirOptions: require('./CreateWebpackConfig/cleanOutputDirOptions')
+  cleanOutputDirOptions: require('./CreateWebpackConfig/cleanOutputDirOptions'),
+  useVue: require('./CreateWebpackConfig/useVue'),
+  useReact: require('./CreateWebpackConfig/useReact'),
+  useLess: require('./CreateWebpackConfig/useLess'),
+  useSass: require('./CreateWebpackConfig/useSass')
 };

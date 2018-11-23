@@ -76,6 +76,12 @@ module.exports = {
     // 解析 React 单文件组件 ( .jsx )
     useReact: false,
 
+    // 解析 Less 文件 ( .less )
+    useLess: false,
+
+    // 解析 Sass 文件 ( .scss, .sass )
+    useSass: false,
+
     // 事件回调
     on: {
       // webpack 配置文件创建完成后调用, 可对 webpack 配置进行修改

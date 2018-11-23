@@ -1,5 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+const GetPostcssLoader = require('./util/GetPostcssLoader');
 
 module.exports = function( NewWebpackConfig, config ){
 
@@ -20,14 +20,7 @@ module.exports = function( NewWebpackConfig, config ){
 }
 
 
-function GetPostcssLoader(){
-  return {
-    loader: 'postcss-loader',
-    options: {
-      plugins: [ require('autoprefixer') ]
-    }
-  };
-}
+
 
 function GetRule( config ){
   const rule = {
