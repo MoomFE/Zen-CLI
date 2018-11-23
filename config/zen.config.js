@@ -47,18 +47,21 @@ module.exports = {
       allChunks: true
     },
 
-    // 是否使用 "clean-webpack-plugin" 清理输出文件夹
-    // 默认未开启, 请根据使用情况自行开启
-    Plugin_CleanWebpackPlugin: false,
-    // 插件 "clean-webpack-plugin" 的配置
-    // 需要开启 PluginCleanWebpackPlugin 配置项
-    Plugin_CleanWebpackPluginOptions: {
-      // 允许清理根目录以外的文件夹
-      allowExternal: true,
-      // 不显示在控制台
-      verbose: false,
-      // 监听模式下也依旧清空文件夹
-      watch: true
+    // 是否清理输出文件夹
+    cleanOutputDir: false,
+    // 清理输出文件夹选项
+    cleanOutputDirOptions: {
+      // 清理输出文件夹所有内容
+      // 此条目为真时, 此选项其它条目全部不生效
+      cleanAll: true,
+      // 清理输出文件夹内的文件
+      cleanFile: true,
+      // 清理输出文件夹内的文件夹
+      cleanDir: false,
+      // 只清理匹配的文件或文件夹, 可传入正则或字符串规则
+      // 每条规则将会依次和文件或文件夹的文件名和完整路径进行比对
+      // [ /\.js$/, 'index.css', ... ]
+      cleanMatching: []
     },
 
     // 是否根据代码自动引入相应 polyfill

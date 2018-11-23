@@ -1,6 +1,5 @@
 
 
 module.exports = {
-  mode: false,
-  banner: '123'
+  mode: false
 }

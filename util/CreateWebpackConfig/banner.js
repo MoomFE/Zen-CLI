@@ -16,7 +16,7 @@ module.exports = function( NewWebpackConfig, config ){
   // 不是正则的条目则删除掉
   if( config.bannerOutputTypes ){
     config.bannerOutputTypes.$deleteValue( bannerOutputType => {
-      return !ZenJS.util.isRegExp( bannerOutputType );
+      return !ZenJS.isRegExp( bannerOutputType );
     });
   }
 

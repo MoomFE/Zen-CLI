@@ -36,8 +36,6 @@ module.exports = function(
 const ExternalProcessing = {
   // 打包模式
   mode: require('./CreateWebpackConfig/mode'),
-  // 插件 - 清空出口文件夹
-  Plugin_CleanWebpackPlugin: require('./CreateWebpackConfig/Plugin_CleanWebpackPlugin'),
   // 自动添加 polyfill
   autoPolyfill: require('./CreateWebpackConfig/autoPolyfill'),
   // 处理 css
@@ -47,5 +45,7 @@ const ExternalProcessing = {
   // 处理 React 单文件组件 ( .jsx )
   useReact: require('./CreateWebpackConfig/useReact'),
   // 无 banner 时删除无用数据
-  banner: require('./CreateWebpackConfig/banner')
+  banner: require('./CreateWebpackConfig/banner'),
+  // 处理 cleanMatching 为数组格式, 方便之后处理
+  cleanOutputDirOptions: require('./CreateWebpackConfig/cleanOutputDirOptions')
 };
