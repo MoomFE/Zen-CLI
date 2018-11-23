@@ -22,7 +22,8 @@
       "**/Zen-CLI.code-workspace": true,
       "bin": true,
       "scripts": true,
-      "test": true
+      "test": true,
+      "types": true
     }
   }
 }
