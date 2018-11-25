@@ -2,8 +2,12 @@
 
 module.exports = {
   mode: false,
-  builtInCss: false,
 
+  builtInCss: false,
   useSass: true,
-  useLess: true
+  useLess: true,
+
+  browserslist: [
+    '> 30%'
+  ]
 }

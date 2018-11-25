@@ -17,9 +17,14 @@ module.exports = function( NewWebpackConfig, config ){
       '@babel/preset-react'
     ]);
 
+    const babel = JSX.use.options.presets[0];
+
+    // browserslist
+    babel[1].targets.browsers = config.browserslist;
+
     // 如果需要自动添加 polyfill
     if( config.autoPolyfill ){
-      JSX.use.options.presets[0].push({ useBuiltIns: 'usage' });
+      babel[1].useBuiltIns = 'usage';
     }
 
     NewWebpackConfig.module.rules.push( JSX );

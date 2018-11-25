@@ -42,7 +42,7 @@ function OutputFile( config, path, memoryFS ){
  * 读取文件并且处理文件
  */
 function ReadFile( config, path, memoryFS ){
-  let data = memoryFS.readFileSync( path ).toString().trim();
+  let data = memoryFS.readFileSync( path ).toString();
 
   // 开发模式下, 对输出的 css 进行美化
   if( config.mode === 'development' && /\.css$/.test( path ) ){
@@ -97,7 +97,7 @@ function toBeautify( css ){
     css = css.replace( value[0], value[1] );
   });
 
-  return css;
+  return css.trim();
 }
 
 

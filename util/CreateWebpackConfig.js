@@ -42,5 +42,6 @@ const ExternalProcessing = {
   useVue: require('./CreateWebpackConfig/useVue'),
   useReact: require('./CreateWebpackConfig/useReact'),
   useLess: require('./CreateWebpackConfig/useLess'),
-  useSass: require('./CreateWebpackConfig/useSass')
+  useSass: require('./CreateWebpackConfig/useSass'),
+  browserslist: require('./CreateWebpackConfig/browserslist')
 };

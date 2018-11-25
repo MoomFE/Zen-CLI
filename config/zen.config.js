@@ -64,6 +64,9 @@ module.exports = {
       cleanMatching: []
     },
 
+    // 兼容的最低浏览器
+    browserslist: [ 'last 1 versions' ],
+
     // 是否根据代码自动引入相应 polyfill
     autoPolyfill: true,
 

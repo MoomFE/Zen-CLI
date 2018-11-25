@@ -10,7 +10,9 @@ module.exports = function GetPostcssLoader( config ){
     loader: 'postcss-loader',
     options: {
       plugins: [
-        autoprefixer(),
+        autoprefixer({
+          browsers: config.browserslist
+        }),
         cssnano()
       ]
     }
