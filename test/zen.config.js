@@ -1,6 +1,7 @@
 
 
 module.exports = {
+  mode: false,
   builtInCss: false,
 
   useSass: true,

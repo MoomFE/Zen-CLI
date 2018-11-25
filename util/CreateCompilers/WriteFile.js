@@ -39,16 +39,21 @@ function OutputFile( config, path, memoryFS ){
   }
 }
 /**
- * 读取文件并且导入用户传入的 banner
+ * 读取文件并且处理文件
  */
 function ReadFile( config, path, memoryFS ){
-  const data = memoryFS.readFileSync( path );
+  let data = memoryFS.readFileSync( path ).toString().trim();
 
-  if( config.banner ){
-    return GetBanner( config, path ) + data;
+  // 开发模式下, 对输出的 css 进行美化
+  if( config.mode === 'development' && /\.css$/.test( path ) ){
+    data = toBeautify( data );
   }
 
-  return data;  
+  if( config.banner ){
+    data = GetBanner( config, path ) + data;
+  }
+
+  return Buffer.from( data );  
 }
 /**
  * 格式化用户定义的 banner 后返回
@@ -76,6 +81,23 @@ function GetBanner( config, path ){
   }
 
   return banner + '\n\n';
+}
+/**
+ * 美化 CSS
+ */
+function toBeautify( css ){
+  [
+    [ /{/g, ' {\n  '  ],
+    [ /}/g, '\n}\n\n' ],
+    [ /(?<!base64),/g, ', '      ],
+    [ /;(?!base64|charset)/g, ';\n  '   ],
+    [ /  ([^:]+?):/g, '  $1: ' ],
+    [ />/g, ' > ' ]
+  ].forEach( value => {
+    css = css.replace( value[0], value[1] );
+  });
+
+  return css;
 }
 
 

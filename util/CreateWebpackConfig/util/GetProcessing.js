@@ -16,10 +16,11 @@ module.exports = function( name, test, isCss ){
     // 将 css 内置在 js 中
     if( config.builtInCss ){
       const use = [
-        'style-loader', 'css-loader',
-        isCss ? '' : `${ LowerName }-loader`,
+        'style-loader',
+        'css-loader',
         config.useVue ? 'vue-style-loader' : '',
-        GetPostcssLoader()
+        GetPostcssLoader( config ),
+        isCss ? '' : `${ LowerName }-loader`
       ].$deleteValue('');
 
       return NewWebpackConfig.module.rules.push({ test, use });
@@ -29,9 +30,9 @@ module.exports = function( name, test, isCss ){
       fallback: 'style-loader',
       use: [
         'css-loader',
-        isCss ? '' : `${ LowerName }-loader`,
         config.useVue ? 'vue-style-loader' : '',
-        GetPostcssLoader()
+        GetPostcssLoader( config ),
+        isCss ? '' : `${ LowerName }-loader`
       ].$deleteValue('')
     };
 
