@@ -18,9 +18,9 @@ module.exports = function( name, test, isCss ){
       const use = [
         'style-loader', 'css-loader',
         isCss ? '' : `${ LowerName }-loader`,
-        GetPostcssLoader(),
-        config.useVue ? 'vue-style-loader' : ''
-      ].$deleteValue('');;
+        config.useVue ? 'vue-style-loader' : '',
+        GetPostcssLoader()
+      ].$deleteValue('');
 
       return NewWebpackConfig.module.rules.push({ test, use });
     }
@@ -30,8 +30,8 @@ module.exports = function( name, test, isCss ){
       use: [
         'css-loader',
         isCss ? '' : `${ LowerName }-loader`,
-        GetPostcssLoader(),
-        config.useVue ? 'vue-style-loader' : ''
+        config.useVue ? 'vue-style-loader' : '',
+        GetPostcssLoader()
       ].$deleteValue('')
     };
 
