@@ -1,13 +1,20 @@
 
 
 module.exports = {
-  mode: false,
 
-  builtInCss: false,
-  useSass: true,
-  useLess: true,
+  group: {
+    1: [
+      {
+        from: 'src/index.js',
+        to: 'dist/index.js'
+      }
+    ]
+  },
 
-  browserslist: [
-    '> 30%'
-  ]
+  config: {
+    builtInCss: false,
+    useSass: true,
+    useLess: true
+  }
+
 }

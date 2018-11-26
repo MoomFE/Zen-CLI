@@ -198,6 +198,23 @@
     }
   }
 ```
+```js
+  module.exports = {
+    // 可以使用 "npm run build name1" 等指令来运行指定组内的配置组
+    // 为被指定的组在本次运行时将不生效
+    group: {
+      name1: [], // 配置组: name1
+      name2: []  // 配置组: name2
+    },
+    // 无论使不使用 group, pipe 内的配置都永远生效
+    pipe: [
+      // 配置组: default
+    ],
+    config: {
+      // ... 默认配置
+    }
+  }
+```
 
 <br>
 
