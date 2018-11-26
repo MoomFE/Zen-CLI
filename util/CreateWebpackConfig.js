@@ -14,13 +14,9 @@ module.exports = function(
   /** 当前文件的 Webpack 配置 */
   const NewWebpackConfig = require('./CreateWebpackConfig/index')( config, entry, filePath );
 
-  // 搜索可配置项进行配置
-  config.$each( name => {
-    const fn = ExternalProcessing[ name ];
-
-    if( fn ){
-      fn( NewWebpackConfig, config )
-    }
+  // 处理
+  ExternalProcessing.forEach(({ handler }) => {
+    handler( NewWebpackConfig, config );
   });
 
   // 执行事件回调
@@ -33,15 +29,45 @@ module.exports = function(
 }
 
 
-const ExternalProcessing = {
-  mode: require('./CreateWebpackConfig/mode'),
-  autoPolyfill: require('./CreateWebpackConfig/autoPolyfill'),
-  builtInCss: require('./CreateWebpackConfig/builtInCss'),
-  banner: require('./CreateWebpackConfig/banner'),
-  cleanOutputDirOptions: require('./CreateWebpackConfig/cleanOutputDirOptions'),
-  useVue: require('./CreateWebpackConfig/useVue'),
-  useReact: require('./CreateWebpackConfig/useReact'),
-  useLess: require('./CreateWebpackConfig/useLess'),
-  useSass: require('./CreateWebpackConfig/useSass'),
-  browserslist: require('./CreateWebpackConfig/browserslist')
-};
+const ExternalProcessing = [
+  {
+    name: 'mode',
+    handler: require('./CreateWebpackConfig/1. Mode')
+  },
+  {
+    name: 'autoPolyfill',
+    handler: require('./CreateWebpackConfig/2. AutoPolyfill')
+  },
+  {
+    name: 'builtInCss',
+    handler: require('./CreateWebpackConfig/3. BuiltInCss')
+  },
+  {
+    name: 'browserslist',
+    handler: require('./CreateWebpackConfig/4. Browserslist')
+  },
+  {
+    name: 'useVue',
+    handler: require('./CreateWebpackConfig/5. UseVue')
+  },
+  {
+    name: 'useReact',
+    handler: require('./CreateWebpackConfig/6. UseReact')
+  },
+  {
+    name: 'useLess',
+    handler: require('./CreateWebpackConfig/7. UseLess')
+  },
+  {
+    name: 'useSass',
+    handler: require('./CreateWebpackConfig/8. UseSass')
+  },
+  {
+    name: 'banner',
+    handler: require('./CreateWebpackConfig/9. Banner')
+  },
+  {
+    name: 'cleanOutputDirOptions',
+    handler: require('./CreateWebpackConfig/10. CleanOutputDirOptions')
+  }
+];

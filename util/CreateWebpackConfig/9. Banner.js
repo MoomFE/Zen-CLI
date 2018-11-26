@@ -1,6 +1,6 @@
 
 
-module.exports = function( NewWebpackConfig, config ){
+module.exports = function( webpack, config ){
 
   // 没有传入 banner, 则删除相关参数
   if( !config.banner || typeof config.banner !== 'string' ){

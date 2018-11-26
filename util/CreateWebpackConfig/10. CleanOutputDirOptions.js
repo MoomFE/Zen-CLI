@@ -1,6 +1,6 @@
 
 
-module.exports = function( NewWebpackConfig, config ){
+module.exports = function( webpack, config ){
   if( config.cleanOutputDir ){
     let cleanMatching = config.cleanOutputDirOptions.cleanMatching;
 

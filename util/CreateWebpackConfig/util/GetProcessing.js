@@ -4,47 +4,41 @@ const GetPostcssLoader = require('./GetPostcssLoader');
 
 module.exports = function( name, test, isCss ){
 
-  const LowerName = name.toLowerCase();
+  return ( webpack, config ) => {
 
-  return ( NewWebpackConfig, config ) => {
-
-    if( !isCss ){
-      // 没有使用 less / sass
-      if( !config[ 'use' + name ] ) return;
+    // 没有使用 less / sass
+    if( !isCss && !config[ 'use' + name ] ){
+      return;
     }
+
+    const commonUse = [
+      `css-loader`,
+      `${ config.useVue ? 'vue-style-loader' : '' }`,
+      GetPostcssLoader( config ),
+      `${ isCss ? '' : `${ name.toLowerCase() }-loader` }`
+    ];
+
+    commonUse.$deleteValue('');
 
     // 将 css 内置在 js 中
     if( config.builtInCss ){
-      const use = [
-        'style-loader',
-        'css-loader',
-        config.useVue ? 'vue-style-loader' : '',
-        GetPostcssLoader( config ),
-        isCss ? '' : `${ LowerName }-loader`
-      ].$deleteValue('');
+      webpack.module.rules.push({
+        test,
+        use: [ 'style-loader' ].concat( commonUse )
+      });
+    }
+    // 将 css 导出为文件
+    else{
+      const options = {
+        fallback: 'style-loader',
+        use: commonUse
+      };
 
-      return NewWebpackConfig.module.rules.push({ test, use });
+      webpack.module.rules.push({
+        test,
+        use: ExtractTextPlugin.extract( options )
+      });
     }
 
-    const options = {
-      fallback: 'style-loader',
-      use: [
-        'css-loader',
-        config.useVue ? 'vue-style-loader' : '',
-        GetPostcssLoader( config ),
-        isCss ? '' : `${ LowerName }-loader`
-      ].$deleteValue('')
-    };
-
-    NewWebpackConfig.module.rules.push({
-      test,
-      use: ExtractTextPlugin.extract( options )
-    });
-
-    if( isCss ){
-      NewWebpackConfig.plugins.push(
-        new ExtractTextPlugin( config.Plugin_ExtractTextPluginOptions )
-      );
-    }
   };
 }

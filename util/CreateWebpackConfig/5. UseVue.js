@@ -1,15 +1,15 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 
-module.exports = function( NewWebpackConfig, config ){
+module.exports = function( webpack, config ){
   if( config.useVue ){
 
-    NewWebpackConfig.module.rules.push({
+    webpack.module.rules.push({
       test: /\.vue$/,
       loader: 'vue-loader'
     });
 
-    NewWebpackConfig.plugins.push(
+    webpack.plugins.push(
       new VueLoaderPlugin()
     );
 
