@@ -11,6 +11,7 @@ module.exports = function( compiler, webpackConfig ){
 
   // 当文件写入内存中
   compiler.hooks.afterEmit.tap( 'writeFile', compilation => {
+
     // 将所有文件写入到存储中
     compilation.assets.$each(( noop, RawSource ) => {
       const path = RawSource.existsAt;

@@ -35,39 +35,43 @@ const ExternalProcessing = [
     handler: require('./CreateWebpackConfig/1. Mode')
   },
   {
+    name: 'to',
+    handler: require('./CreateWebpackConfig/2. To')
+  },
+  {
     name: 'autoPolyfill',
-    handler: require('./CreateWebpackConfig/2. AutoPolyfill')
+    handler: require('./CreateWebpackConfig/3. AutoPolyfill')
   },
   {
     name: 'builtInCss',
-    handler: require('./CreateWebpackConfig/3. BuiltInCss')
+    handler: require('./CreateWebpackConfig/4. BuiltInCss')
   },
   {
     name: 'browserslist',
-    handler: require('./CreateWebpackConfig/4. Browserslist')
+    handler: require('./CreateWebpackConfig/5. Browserslist')
   },
   {
     name: 'useVue',
-    handler: require('./CreateWebpackConfig/5. UseVue')
+    handler: require('./CreateWebpackConfig/6. UseVue')
   },
   {
     name: 'useReact',
-    handler: require('./CreateWebpackConfig/6. UseReact')
+    handler: require('./CreateWebpackConfig/7. UseReact')
   },
   {
     name: 'useLess',
-    handler: require('./CreateWebpackConfig/7. UseLess')
+    handler: require('./CreateWebpackConfig/8. UseLess')
   },
   {
     name: 'useSass',
-    handler: require('./CreateWebpackConfig/8. UseSass')
+    handler: require('./CreateWebpackConfig/9. UseSass')
   },
   {
     name: 'banner',
-    handler: require('./CreateWebpackConfig/9. Banner')
+    handler: require('./CreateWebpackConfig/10. Banner')
   },
   {
     name: 'cleanOutputDirOptions',
-    handler: require('./CreateWebpackConfig/10. CleanOutputDirOptions')
+    handler: require('./CreateWebpackConfig/11. CleanOutputDirOptions')
   }
 ];
