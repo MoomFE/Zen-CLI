@@ -6,8 +6,10 @@ module.exports = function( webpack, config ){
 
   handler( webpack, config );
 
-  webpack.plugins.push(
-    new ExtractTextPlugin( config.Plugin_ExtractTextPluginOptions )
-  );
+  if( !config.builtInCss ){
+    webpack.plugins.push(
+      new ExtractTextPlugin( config.Plugin_ExtractTextPluginOptions )
+    );
+  }
 
 };
