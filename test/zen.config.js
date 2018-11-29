@@ -2,17 +2,17 @@
 
 module.exports = {
 
-  group: {
-    1: [
-      {
-        from: 'src/index.less',
-        to: 'dist/less.css'
-      }
-    ]
-  },
+  pipe: [
+    {
+      from: 'src/index.css',
+      to: 'dist/index.css'
+    }
+  ],
 
   config: {
-    builtInCss: true,
+    autoPolyfill: false,
+
+    useVue: true,
     useSass: true,
     useLess: true
   }

@@ -6,7 +6,9 @@ module.exports = function( webpack, config ){
 
   handler( webpack, config );
 
-  if( !config.builtInCss ){
+  if( config.builtInCss ){
+    delete config.Plugin_ExtractTextPluginOptions;
+  }else{
     webpack.plugins.push(
       new ExtractTextPlugin( config.Plugin_ExtractTextPluginOptions )
     );

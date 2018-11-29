@@ -17,6 +17,8 @@ module.exports = function( webpack, config ){
     });
 
     config.cleanOutputDirOptions.cleanMatching = cleanMatching;
+  }else{
+    delete config.cleanOutputDirOptions;
   }
 
 }

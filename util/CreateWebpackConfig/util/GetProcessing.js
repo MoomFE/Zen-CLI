@@ -1,5 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const GetPostcssLoader = require('./GetPostcssLoader');
+const GetVueStyleLoader = require('./GetVueStyleLoader');
 
 
 module.exports = function( name, test, isCss ){
@@ -12,7 +13,7 @@ module.exports = function( name, test, isCss ){
     }
 
     const commonUse = [
-      `${ config.useVue ? 'vue-style-loader' : '' }`,
+      GetVueStyleLoader( config ),
       `css-loader`,
       GetPostcssLoader( config ),
       `${ isCss ? '' : `${ name.toLowerCase() }-loader` }`
