@@ -89,6 +89,18 @@
 
     /* ------  文件输入输出相关 - End ------ */
 
+    // CSS 内的资源文件输出选项
+    //   - png, jpg, jpeg, gif, svg
+    //   - woff, woff2, ttf, eot
+    "resource": {
+      // 超过这个大小的资源文件将被输出到文件夹 ( Byte )
+      "limit": 8192,
+      // 资源命名规则
+      "name": "[name].[ext]",
+      // 自定义输出目录 ( 相对路径 )
+      "outputPath": undefined
+    },
+
     // 在打包好的文件的块的外部的最顶部插入的一段内容
     "banner": "",
     // 在指定类型文件插入内容

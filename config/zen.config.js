@@ -19,6 +19,12 @@ module.exports = {
     entryFilename: 'index.js',
     outputFilename: 'index.js',
 
+    resource: {
+      limit: 8192,
+      name: '[name].[ext]',
+      outputPath: undefined
+    },
+
     banner: '',
     bannerOutputTypes: /\.js|css$/,
     bannerIsComment: true,

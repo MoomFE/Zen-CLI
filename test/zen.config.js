@@ -14,7 +14,13 @@ module.exports = {
 
     useVue: true,
     useSass: true,
-    useLess: true
+    useLess: true,
+
+    resource: {
+      limit: 8192,
+      name: '[hash].[ext]',
+      outputPath: '/public/img/'
+    }
   }
 
 }

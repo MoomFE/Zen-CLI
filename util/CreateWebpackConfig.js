@@ -73,5 +73,9 @@ const ExternalProcessing = [
   {
     name: 'cleanOutputDirOptions',
     handler: require('./CreateWebpackConfig/11. CleanOutputDirOptions')
+  },
+  {
+    name: 'resource',
+    handler: require('./CreateWebpackConfig/12. Resource')
   }
 ];

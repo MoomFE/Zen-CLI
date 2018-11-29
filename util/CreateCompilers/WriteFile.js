@@ -43,15 +43,21 @@ function OutputFile( config, path, memoryFS ){
  * 读取文件并且处理文件
  */
 function ReadFile( config, path, memoryFS ){
-  let data = memoryFS.readFileSync( path ).toString();
+  let data = memoryFS.readFileSync( path );
 
   // 开发模式下, 对输出的 css 进行美化
   if( config.mode === 'development' && /\.css$/.test( path ) ){
-    data = toBeautify( data );
+    data = toBeautify(
+      data.toString()
+    );
   }
 
   if( config.banner ){
-    data = GetBanner( config, path ) + data;
+    let banner = GetBanner( config, path );
+
+    if( banner ){
+      data = banner + data.toString();
+    }
   }
 
   return Buffer.from( data );  
