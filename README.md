@@ -28,8 +28,8 @@
 
 ```json
   {
-    "build": ".bin\\zen build",
-    "watch": ".bin\\zen watch"
+    "build": "node_modules\\.bin\\zen build",
+    "watch": "node_modules\\.bin\\zen watch"
   }
 ```
 
