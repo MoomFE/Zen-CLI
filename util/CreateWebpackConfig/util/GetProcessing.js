@@ -12,8 +12,8 @@ module.exports = function( name, test, isCss ){
     }
 
     const commonUse = [
-      `css-loader`,
       `${ config.useVue ? 'vue-style-loader' : '' }`,
+      `css-loader`,
       GetPostcssLoader( config ),
       `${ isCss ? '' : `${ name.toLowerCase() }-loader` }`
     ];
@@ -24,7 +24,7 @@ module.exports = function( name, test, isCss ){
     if( config.builtInCss ){
       webpack.module.rules.push({
         test,
-        use: [ 'style-loader' ].concat( commonUse )
+        use: commonUse.$add( 1, 'style-loader' )
       });
     }
     // 将 css 导出为文件
