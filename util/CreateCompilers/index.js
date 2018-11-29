@@ -1,13 +1,14 @@
-const ConfigArray = require('../../scripts/config');
-
-const webpack = require('webpack');
-const compilers = webpack( ConfigArray );
-
-const Writefile = require('./WriteFile');
-const PrintInfo = require('./PrintInfo');
-
 
 module.exports = function( isBuilder ){
+
+  const ConfigArray = require('../../scripts/config');
+
+  const webpack = require('webpack');
+  const compilers = webpack( ConfigArray );
+
+  const Writefile = require('./WriteFile');
+  const PrintInfo = require('./PrintInfo');
+
 
   compilers.compilers.forEach(( compiler, index ) => {
     const config = ConfigArray[ index ];
@@ -19,6 +20,7 @@ module.exports = function( isBuilder ){
     PrintInfo( compiler, config, isBuilder );
 
   });
+
 
   return compilers;
 }

@@ -19,7 +19,7 @@ module.exports = {
     resource: {
       limit: 8192,
       name: '[hash].[ext]',
-      outputPath: '/public/img/'
+      outputPath: 'public/img/'
     }
   }
 
