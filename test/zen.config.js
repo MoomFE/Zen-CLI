@@ -5,7 +5,7 @@ module.exports = {
   pipe: [
     {
       from: 'src/index.css',
-      to: 'dist/index.css'
+      to: 'dist/index2.css'
     }
   ],
 

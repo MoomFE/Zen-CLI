@@ -1,7 +1,7 @@
 
 module.exports = function( isBuilder ){
 
-  const ConfigArray = require('../../scripts/config');
+  const ConfigArray = require('../../scripts/config')();
 
   const webpack = require('webpack');
   const compilers = webpack( ConfigArray );

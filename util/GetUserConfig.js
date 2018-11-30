@@ -3,13 +3,16 @@ const defaultConfig = require('../config/zen.config');
 
 module.exports = function( userDir ){
   const commandDir = global.commandDir;
+  const path = `${ userDir }\\zen.config.js`;
   let config;
   let result = [];
 
   try {
-    config = require(`${ userDir }\\zen.config.js`);
+    config = require( path );
   } catch (error) {
     config = {};
+  } finally {
+    delete require.cache[ path ];
   }
 
   if( config.group ){
