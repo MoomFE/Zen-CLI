@@ -104,8 +104,8 @@
     // 在打包好的文件的块的外部的最顶部插入的一段内容
     "banner": "",
     // 在指定类型文件插入内容
-    //   - 可配置为数组: [ /\.js|css$/, ... ]
-    "bannerOutputTypes": /\.js|css$/,
+    //   - 可配置为数组: [ /\.(js|css)$/, ... ]
+    "bannerOutputTypes": /\.(js|css)$/,
     // 是否为插入的内容自动添加段落注释, 否则将原样输出
     "bannerIsComment": true,
 

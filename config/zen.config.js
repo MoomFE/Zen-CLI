@@ -26,7 +26,7 @@ module.exports = {
     },
 
     banner: '',
-    bannerOutputTypes: /\.js|css$/,
+    bannerOutputTypes: /\.(js|css)$/,
     bannerIsComment: true,
 
     builtInCss: true,
