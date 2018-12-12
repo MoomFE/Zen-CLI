@@ -4,8 +4,8 @@ module.exports = {
 
   pipe: [
     {
-      from: 'src/index.css',
-      to: 'dist/index2.css'
+      from: 'src/index.ts',
+      to: 'dist/index.js'
     }
   ],
 
@@ -15,6 +15,7 @@ module.exports = {
     useVue: true,
     useSass: true,
     useLess: true,
+    useTypeScript: true,
 
     resource: {
       limit: 8192,

@@ -67,15 +67,19 @@ const ExternalProcessing = [
     handler: require('./CreateWebpackConfig/9. UseSass')
   },
   {
+    name: 'useTypeScript',
+    handler: require('./CreateWebpackConfig/10. useTypeScript')
+  },
+  {
     name: 'banner',
-    handler: require('./CreateWebpackConfig/10. Banner')
+    handler: require('./CreateWebpackConfig/11. Banner')
   },
   {
     name: 'cleanOutputDirOptions',
-    handler: require('./CreateWebpackConfig/11. CleanOutputDirOptions')
+    handler: require('./CreateWebpackConfig/12. CleanOutputDirOptions')
   },
   {
     name: 'resource',
-    handler: require('./CreateWebpackConfig/12. Resource')
+    handler: require('./CreateWebpackConfig/13. Resource')
   }
 ];

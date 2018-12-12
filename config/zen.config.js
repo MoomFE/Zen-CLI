@@ -49,6 +49,8 @@ module.exports = {
 
     forcedWrite: true,
 
+    useTypeScript: false,
+
     useVue: false,
 
     useReact: false,
