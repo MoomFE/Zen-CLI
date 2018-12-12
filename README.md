@@ -147,6 +147,7 @@
     "forcedWrite": true,
 
     // 解析 TypeScript 文件 ( .ts )
+    //   - 需要在项目根目录创建 tsconfig.json 文件
     "useTypeScript": false,
 
     // 解析 Vue 单文件组件 ( .vue )
