@@ -25,6 +25,9 @@ module.exports = {
       outputPath: undefined
     },
 
+    outputHtml: false,
+    outputHtmlOptions: {},
+
     banner: '',
     bannerOutputTypes: /\.(js|css)$/,
     bannerIsComment: true,

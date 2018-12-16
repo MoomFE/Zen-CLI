@@ -81,5 +81,9 @@ const ExternalProcessing = [
   {
     name: 'resource',
     handler: require('./CreateWebpackConfig/13. Resource')
+  },
+  {
+    name: 'outputHtml',
+    handler: require('./CreateWebpackConfig/14. OutputHtml')
   }
 ];

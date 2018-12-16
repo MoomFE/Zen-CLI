@@ -101,6 +101,11 @@
       "outputPath": undefined
     },
 
+    // 是否使用 "html-webpack-plugin" 输出 HTML
+    "outputHtml": false,
+    // 传递给 "html-webpack-plugin" 插件的配置项
+    "outputHtmlOptions": {},
+
     // 在打包好的文件的块的外部的最顶部插入的一段内容
     "banner": "",
     // 在指定类型文件插入内容

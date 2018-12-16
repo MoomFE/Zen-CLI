@@ -4,7 +4,7 @@ module.exports = {
 
   pipe: [
     {
-      from: 'src/index.ts',
+      from: 'src/index.js',
       to: 'dist/index.js'
     }
   ],
@@ -15,13 +15,14 @@ module.exports = {
     useVue: true,
     useSass: true,
     useLess: true,
-    useTypeScript: true,
 
     resource: {
       limit: 8192,
       name: '[hash].[ext]',
       outputPath: 'public/img/'
-    }
+    },
+
+    outputHtml: true
   }
 
 }
