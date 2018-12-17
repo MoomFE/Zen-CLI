@@ -8,7 +8,7 @@ module.exports = function( webpack, config ){
     const { outputHtmlOptions } = config;
 
     if( outputHtmlOptions && outputHtmlOptions.filename ){
-      path.resolve( global.userDir, outputHtmlOptions.filename );
+      outputHtmlOptions.filename = path.resolve( global.userDir, outputHtmlOptions.filename );
     }
 
     webpack.plugins.push(
