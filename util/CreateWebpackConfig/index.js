@@ -17,17 +17,16 @@ module.exports = function( config, entry, filePath ){
   if( config.from ){
     // 处理单个文件
     NewWebpackConfig.output.filename = path.basename( config.to );
-    NewWebpackConfig.output.path = path.dirname( config.to );
+    NewWebpackConfig.output.path = config.output = path.dirname( config.to );
 
     // 删除不相关的参数
     delete config.entry;
-    delete config.output;
     delete config.entryFilename;
     delete config.outputFilename;
   }else{
     // 处理文件夹
     NewWebpackConfig.output.filename = config.outputFilename;
-    NewWebpackConfig.output.path = entry.replace( config.entry, config.output );
+    NewWebpackConfig.output.path = config.output = entry.replace( config.entry, config.output );
 
     // 删除不相关的参数
     delete config.from;

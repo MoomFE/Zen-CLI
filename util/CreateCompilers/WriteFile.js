@@ -12,6 +12,8 @@ module.exports = function( compiler, webpackConfig ){
   // 当文件写入内存中
   compiler.hooks.afterEmit.tap( 'writeFile', compilation => {
 
+    const CleanOutputDirOnce = CleanOutputDir.$once();
+
     // 将所有文件写入到存储中
     compilation.assets.$each(( noop, RawSource ) => {
       const path = RawSource.existsAt;
@@ -19,7 +21,7 @@ module.exports = function( compiler, webpackConfig ){
       // 如果文件上锁, 尝试解锁文件
       Chmod( config, path );
       // 清理输出文件夹
-      CleanOutputDir( config, path );
+      CleanOutputDirOnce( config, path );
       // 写入文件
       OutputFile( config, path, memoryFS );
     });
@@ -159,11 +161,11 @@ function CleanOutputDir( config ){
       const [ isFile, isDirectory ] = GetStat( path );
 
       if( isFile ){
-        if( config.cleanOutputDirOptions.cleanFile ){
+        if( cleanFile ){
           Remove( path );
         }
       }else if( isDirectory ){
-        if( config.cleanOutputDirOptions.cleanDir ){
+        if( cleanDir ){
           Remove( path );
         }
       }

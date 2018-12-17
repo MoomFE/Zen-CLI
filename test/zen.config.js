@@ -22,7 +22,8 @@ module.exports = {
       outputPath: 'public/img/'
     },
 
-    outputHtml: true
+    outputHtml: true,
+    cleanOutputDir: true
   }
 
 }
