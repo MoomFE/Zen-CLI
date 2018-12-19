@@ -3,7 +3,9 @@
     "target": "ES6"
   },
   "exclude": [
-    "**/dist/*",
-    "**/node_modules/*"
+    "node_modules"
+  ],
+  "files": [
+    "./node_modules/@moomfe/zenjs/index.d.ts"
   ]
 }
