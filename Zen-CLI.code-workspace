@@ -20,6 +20,8 @@
       "**/package-lock.json": true,
       "**/Zen-CLI.code-workspace": true,
       "bin": true,
+      "jsconfig.json": true,
+      "LICENSE": true,
       "scripts": true,
       "test": true,
       "types": true
