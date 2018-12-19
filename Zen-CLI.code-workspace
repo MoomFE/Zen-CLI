@@ -22,7 +22,6 @@
       "bin": true,
       "jsconfig.json": true,
       "LICENSE": true,
-      "scripts": true,
       "test": true,
       "types": true
     }

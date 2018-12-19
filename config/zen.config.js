@@ -52,6 +52,8 @@ module.exports = {
 
     forcedWrite: true,
 
+    useRollup: false,
+
     useTypeScript: false,
 
     useVue: false,
