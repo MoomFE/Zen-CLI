@@ -1,9 +1,5 @@
-<div align="center">
-  <h1>Zen-CLI</h1>
-  <p>
-    Zen-CLI 是一个基于 webpack 的打包工具。
-  </p>
-</div>
+# Zen-CLI
+Zen-CLI 是一个基于 webpack 的打包工具
 
 <br>
 <br>
