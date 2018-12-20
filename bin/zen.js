@@ -27,7 +27,7 @@ program
         global.isPrivateCommand = isPrivateCommand;
         global.runCommandPath = runCommandPath;
 
-        require( '../scripts/' + name );
+        require( '../scripts/' + name )();
       });
   });
 });

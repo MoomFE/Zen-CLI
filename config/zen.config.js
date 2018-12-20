@@ -20,7 +20,7 @@ module.exports = {
     outputFilename: 'index.js',
 
 
-
+    useRollup: false,
 
 
 
@@ -66,8 +66,6 @@ module.exports = {
     autoPolyfill: true,
 
     forcedWrite: true,
-
-    useRollup: false,
 
     useTypeScript: false,
 

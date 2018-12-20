@@ -1,4 +1,9 @@
 
+
+module.exports = async function build(){
+  const configs = await require('./config')();
+
+}
 // 测试是否可以同时执行 rollup 和 webpack 的打包
 // ( async () => {
 //   const configs = await require('./config')();

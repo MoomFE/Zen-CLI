@@ -2,12 +2,12 @@
 
 module.exports = {
 
-  pipe: [
-    {
-      from: 'src/index.js',
-      to: 'dist/index.js'
-    }
-  ],
+  // pipe: [
+  //   {
+  //     from: 'src/index.js',
+  //     to: 'dist/index.js'
+  //   }
+  // ],
 
   config: {
     autoPolyfill: false,
