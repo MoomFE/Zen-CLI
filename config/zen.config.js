@@ -19,6 +19,21 @@ module.exports = {
     entryFilename: 'index.js',
     outputFilename: 'index.js',
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     resource: {
       limit: 8192,
       name: '[name].[ext]',

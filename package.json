@@ -15,8 +15,9 @@
   },
   "homepage": "https://github.com/MoomFE/Zen-CLI#readme",
   "dependencies": {
-    "@babel/core": "^7.2.0",
+    "@babel/core": "^7.2.2",
     "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/plugin-transform-typescript": "^7.2.0",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
@@ -38,16 +39,20 @@
     "memory-fs": "^0.4.1",
     "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "rollup": "^0.68.1",
+    "rollup-plugin-babel": "^4.1.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "ts-loader": "^5.3.1",
     "typescript": "^3.2.2",
+    "uglify-js": "^3.4.9",
     "url-loader": "^1.1.2",
     "vue-loader": "^15.4.2",
     "vue-template-compiler": "^2.5.21",
-    "webpack": "^4.27.1"
+    "webpack": "^4.28.0"
   },
   "bin": {
     "zen": "./bin/zen.js"
