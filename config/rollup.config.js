@@ -1,5 +1,7 @@
+require('@moomfe/zenjs');
 
-module.exports = {
+
+const config = module.exports = {
 
   output: {
     
@@ -10,3 +12,6 @@ module.exports = {
   ]
 
 }
+
+
+ZenJS.defineGet( config, 'isRollup', ZenJS.returnTrue );

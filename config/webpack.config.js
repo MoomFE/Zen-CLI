@@ -1,5 +1,7 @@
+require('@moomfe/zenjs');
 
-module.exports = {
+
+const config = module.exports = {
 
   entry: {},
   output: {
@@ -13,3 +15,6 @@ module.exports = {
   plugins: []
 
 };
+
+
+ZenJS.defineGet( config, 'isWebpack', ZenJS.returnTrue );
