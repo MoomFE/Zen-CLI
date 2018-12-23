@@ -22,6 +22,8 @@ module.exports = {
 
     useRollup: false,
 
+    useBabel: false,
+
 
 
 

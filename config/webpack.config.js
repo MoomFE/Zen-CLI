@@ -1,15 +1,20 @@
 
 module.exports = {
 
-  entry: {},
+  entry: {
+
+  },
+
   output: {
     pathinfo: false
   },
 
   module: {
-    
+
   },
 
-  plugins: []
+  plugins: [
+
+  ]
 
 };

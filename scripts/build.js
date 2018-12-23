@@ -2,7 +2,15 @@
 
 module.exports = async function build(){
   const configs = await require('./config')();
+  const webpackConfigs = configs.$findAll({ isWebpack: true });
 
+  // const compilers = require('webpack')(
+  //   webpackConfigs
+  // );
+
+  // compilers.watch( {}, ( err, stats ) => {
+
+  // });
 }
 // 测试是否可以同时执行 rollup 和 webpack 的打包
 // ( async () => {
