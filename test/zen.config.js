@@ -12,7 +12,9 @@ module.exports = {
   config: {
     mode: false,
 
-    useTypeScript: true
+    useTypeScript: true,
+    useVue: true,
+    useReact: true
   }
 
 }

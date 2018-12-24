@@ -112,6 +112,12 @@ Zen-CLI 是一个基于 webpack 的打包工具
     // 解析 TypeScript 文件 ( .ts )
     "useTypeScript": false,
 
+    // 解析 Vue 单文件组件 ( .vue )
+    "useVue": false,
+
+    // 解析 React 单文件组件 ( .jsx )
+    "useReact": false,
+
 
     // Zen-CLI 正在重构, 以下功能均不可用, 重构预计两天内完成
 
@@ -160,12 +166,6 @@ Zen-CLI 是一个基于 webpack 的打包工具
 
     // 输出文件时是否强制写入 ( 输出文件权限为只读时, 尝试强制解锁并写入 )
     "forcedWrite": true,
-
-    // 解析 Vue 单文件组件 ( .vue )
-    "useVue": false,
-
-    // 解析 React 单文件组件 ( .jsx )
-    "useReact": false,
 
     // 解析 Less 文件 ( .less )
     "useLess": false,
