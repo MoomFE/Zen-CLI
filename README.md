@@ -118,6 +118,12 @@ Zen-CLI 是一个基于 webpack 的打包工具
     // 解析 React 单文件组件 ( .jsx )
     "useReact": false,
 
+    // 解析 Less 文件 ( .less )
+    "useLess": false,
+
+    // 解析 Sass 文件 ( .scss, .sass )
+    "useSass": false,
+
     // 将代码内引入的 css 内置在 js 中
     //   - 否则会输出为 css 文件
     "builtInCss": true,
@@ -167,12 +173,6 @@ Zen-CLI 是一个基于 webpack 的打包工具
 
     // 输出文件时是否强制写入 ( 输出文件权限为只读时, 尝试强制解锁并写入 )
     "forcedWrite": true,
-
-    // 解析 Less 文件 ( .less )
-    "useLess": false,
-
-    // 解析 Sass 文件 ( .scss, .sass )
-    "useSass": false,
 
     // 事件回调
     "on": {

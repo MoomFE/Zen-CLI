@@ -17,8 +17,10 @@ module.exports = {
     useTypeScript: true,
     useVue: true,
     useReact: true,
+    useSass: true,
+    useLess: true,
 
-    builtInCss: false
+    // builtInCss: false
   }
 
 }
