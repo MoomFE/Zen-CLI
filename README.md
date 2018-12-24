@@ -136,15 +136,15 @@ Zen-CLI 是一个基于 webpack 的打包工具
       "allChunks": true
     },
 
-
-    // Zen-CLI 正在重构, 以下功能均不可用, 重构预计两天内完成
-
-
-
     // 是否使用 "html-webpack-plugin" 输出 HTML
     "outputHtml": false,
     // 传递给 "html-webpack-plugin" 插件的配置项
     "outputHtmlOptions": {},
+
+
+    // Zen-CLI 正在重构, 以下功能均不可用, 重构预计两天内完成
+
+    
 
     // 在打包好的文件的块的外部的最顶部插入的一段内容
     "banner": "",

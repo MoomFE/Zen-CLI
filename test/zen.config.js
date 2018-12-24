@@ -20,7 +20,8 @@ module.exports = {
     useSass: true,
     useLess: true,
 
-    // builtInCss: false
+    builtInCss: false,
+    outputHtml: true
   }
 
 }
