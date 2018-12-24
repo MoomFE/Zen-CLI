@@ -118,6 +118,18 @@ Zen-CLI 是一个基于 webpack 的打包工具
     // 解析 React 单文件组件 ( .jsx )
     "useReact": false,
 
+    // 将代码内引入的 css 内置在 js 中
+    //   - 否则会输出为 css 文件
+    "builtInCss": true,
+    // 插件 "extract-text-webpack-plugin" 的配置项
+    //   - 将代码内引入的 css 输出为 css 文件时使用, 配置输出的 css 相关信息
+    "Plugin_ExtractTextPluginOptions": {
+      // 输出的 css 文件名
+      "filename": "index.css",
+      // 提取 chunk 的 css
+      "allChunks": true
+    },
+
 
     // Zen-CLI 正在重构, 以下功能均不可用, 重构预计两天内完成
 
@@ -135,17 +147,6 @@ Zen-CLI 是一个基于 webpack 的打包工具
     "bannerOutputTypes": /\.(js|css)$/,
     // 是否为插入的内容自动添加段落注释, 否则将原样输出
     "bannerIsComment": true,
-
-    // 将代码内引入的 css 内置在 js 中, 否则会输出为 css 文件
-    "builtInCss": true,
-    // 插件 "extract-text-webpack-plugin" 的配置项
-    //   - 将代码内引入的 css 输出为 css 文件时使用, 配置输出的 css 相关信息
-    "Plugin_ExtractTextPluginOptions": {
-      // 输出的 css 文件名
-      "filename": "index.css",
-      // 提取 chunk 的 css
-      "allChunks": true
-    },
 
     // 是否清理输出文件夹
     "cleanOutputDir": false,
