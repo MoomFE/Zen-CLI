@@ -27,18 +27,6 @@ module.exports = {
 
     browserslist: [ 'last 1 versions' ],
 
-
-
-
-
-
-
-
-
-
-
-
-    
     resource: {
       limit: 8192,
       name: '[name].[ext]',
