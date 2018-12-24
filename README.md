@@ -94,15 +94,10 @@ Zen-CLI 是一个基于 webpack 的打包工具
     //   - 需要 "babel" 选项为 true 时可用
     "autoPolyfill": true,
 
+    // 兼容的最低浏览器
+    "browserslist": [ "last 1 versions" ],
 
-
-    // Zen-CLI 正在重构, 以下功能均不可用, 重构预计两天内完成
-
-
-
-
-
-    // CSS 内的资源文件输出选项
+    // JS CSS 内的资源文件输出选项
     //   - png, jpg, jpeg, gif, svg
     //   - woff, woff2, ttf, eot
     "resource": {
@@ -113,6 +108,14 @@ Zen-CLI 是一个基于 webpack 的打包工具
       // 自定义输出目录 ( 相对路径 )
       "outputPath": undefined
     },
+
+    // 解析 TypeScript 文件 ( .ts )
+    "useTypeScript": false,
+
+
+    // Zen-CLI 正在重构, 以下功能均不可用, 重构预计两天内完成
+
+
 
     // 是否使用 "html-webpack-plugin" 输出 HTML
     "outputHtml": false,
@@ -155,15 +158,8 @@ Zen-CLI 是一个基于 webpack 的打包工具
       "cleanMatching": []
     },
 
-    // 兼容的最低浏览器
-    "browserslist": [ "last 1 versions" ],
-
     // 输出文件时是否强制写入 ( 输出文件权限为只读时, 尝试强制解锁并写入 )
     "forcedWrite": true,
-
-    // 解析 TypeScript 文件 ( .ts )
-    //   - 需要在项目根目录创建 tsconfig.json 文件
-    "useTypeScript": false,
 
     // 解析 Vue 单文件组件 ( .vue )
     "useVue": false,

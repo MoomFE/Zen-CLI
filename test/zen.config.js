@@ -10,7 +10,9 @@ module.exports = {
   // ],
 
   config: {
-    mode: true
+    mode: false,
+
+    useTypeScript: true
   }
 
 }
