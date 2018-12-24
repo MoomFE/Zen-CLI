@@ -1,5 +1,5 @@
 
-module.exports = new Proxy({
+module.exports = {
 
   // 使用 babel 时的 babel 配置
   true: {
@@ -34,15 +34,4 @@ module.exports = new Proxy({
     }
   }
 
-}, {
-  get( target, name ){
-    if( name in target ){
-      return Object.$assign( null, target[ name ] );
-    }
-  },
-  set( target, name, value ){
-    if( name in target ){
-      target[ name ] = Object.$assign( null, value );
-    }
-  }
-});
+};

@@ -24,6 +24,7 @@ module.exports = {
 
     useBabel: true,
     autoPolyfill: true,
+
     browserslist: [ 'last 1 versions' ],
 
 
