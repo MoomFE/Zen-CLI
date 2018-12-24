@@ -22,7 +22,9 @@ module.exports = {
 
     useRollup: false,
 
-    useBabel: false,
+    useBabel: true,
+    autoPolyfill: true,
+    browserslist: [ 'last 1 versions' ],
 
 
 
@@ -62,10 +64,6 @@ module.exports = {
       cleanDir: false,
       cleanMatching: []
     },
-
-    browserslist: [ 'last 1 versions' ],
-
-    autoPolyfill: true,
 
     forcedWrite: true,
 

@@ -10,6 +10,10 @@ module.exports = {
   // ],
 
   config: {
+    mode: true,
+
+    useBabel: false,
+
     autoPolyfill: false,
 
     useVue: true,
