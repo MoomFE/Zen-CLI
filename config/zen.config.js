@@ -20,9 +20,9 @@ module.exports = {
     outputFilename: 'index.js',
 
 
-    useRollup: false,
+    rollup: false,
 
-    useBabel: true,
+    babel: true,
     autoPolyfill: true,
 
     browserslist: [ 'last 1 versions' ],

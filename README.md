@@ -85,6 +85,23 @@ Zen-CLI 是一个基于 webpack 的打包工具
 
     /* ------  文件输入输出相关 - End ------ */
 
+    // 使用 rollup 作为打包核心而不使用 webpack ( 开发中 )
+    "rollup": false,
+
+    // 使用 babel 编译 js 代码
+    "babel": true,
+    // 是否根据 js 代码自动引入使用过的相应 polyfill
+    //   - 需要 "babel" 选项为 true 时可用
+    "autoPolyfill": true,
+
+
+
+    // Zen-CLI 正在重构, 以下功能均不可用, 重构预计两天内完成
+
+
+
+
+
     // CSS 内的资源文件输出选项
     //   - png, jpg, jpeg, gif, svg
     //   - woff, woff2, ttf, eot
@@ -141,14 +158,8 @@ Zen-CLI 是一个基于 webpack 的打包工具
     // 兼容的最低浏览器
     "browserslist": [ "last 1 versions" ],
 
-    // 是否根据代码自动引入相应 polyfill
-    "autoPolyfill": true,
-
     // 输出文件时是否强制写入 ( 输出文件权限为只读时, 尝试强制解锁并写入 )
     "forcedWrite": true,
-
-    // 是否使用 rollup 作为打包工具而不使用 webpack
-    "useRollup": false,
 
     // 解析 TypeScript 文件 ( .ts )
     //   - 需要在项目根目录创建 tsconfig.json 文件
