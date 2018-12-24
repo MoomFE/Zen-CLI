@@ -12,6 +12,8 @@ module.exports = {
   config: {
     mode: false,
 
+    babel: false,
+
     useTypeScript: true,
     useVue: true,
     useReact: true
