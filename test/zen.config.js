@@ -4,8 +4,8 @@ module.exports = {
 
   pipe: [
     {
-      from: 'src/index.less',
-      to: 'dist/indexx.css'
+      from: 'src/index.js',
+      to: 'dist/index.js'
     }
   ],
 
@@ -21,7 +21,9 @@ module.exports = {
     useLess: true,
 
     builtInCss: false,
-    outputHtml: true
+    outputHtml: true,
+
+    forcedWrite: false
   }
 
 }

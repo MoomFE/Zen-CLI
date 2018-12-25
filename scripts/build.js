@@ -1,15 +1,13 @@
 
 
 module.exports = async function build(){
-  const [ webpackConfigs, rollupConfigs ] = await require('./config')();
+  const [ webpackCompilers, rollupConfigs ] = await require('./config')();
 
-  const compilers = require('webpack')(
-    webpackConfigs
-  );
+  if( webpackCompilers ){
+    webpackCompilers.run(( err, stats ) => {
 
-  compilers.run(( err, stats ) => {
-
-  });
+    });
+  }
 }
 // 测试是否可以同时执行 rollup 和 webpack 的打包
 // ( async () => {

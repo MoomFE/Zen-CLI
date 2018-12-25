@@ -141,18 +141,8 @@ Zen-CLI 是一个基于 webpack 的打包工具
     // 传递给 "html-webpack-plugin" 插件的配置项
     "outputHtmlOptions": {},
 
-
-    // Zen-CLI 正在重构, 以下功能均不可用, 重构预计两天内完成
-
-    
-
-    // 在打包好的文件的块的外部的最顶部插入的一段内容
-    "banner": "",
-    // 在指定类型文件插入内容
-    //   - 可配置为数组: [ /\.(js|css)$/, ... ]
-    "bannerOutputTypes": /\.(js|css)$/,
-    // 是否为插入的内容自动添加段落注释, 否则将原样输出
-    "bannerIsComment": true,
+    // 输出文件时是否强制写入 ( 输出文件权限为只读时, 尝试强制解锁并写入 )
+    "forcedWrite": true,
 
     // 是否清理输出文件夹
     "cleanOutputDir": false,
@@ -171,8 +161,18 @@ Zen-CLI 是一个基于 webpack 的打包工具
       "cleanMatching": []
     },
 
-    // 输出文件时是否强制写入 ( 输出文件权限为只读时, 尝试强制解锁并写入 )
-    "forcedWrite": true,
+
+    // Zen-CLI 正在重构, 以下功能均不可用, 重构预计两天内完成
+
+    
+
+    // 在打包好的文件的块的外部的最顶部插入的一段内容
+    "banner": "",
+    // 在指定类型文件插入内容
+    //   - 可配置为数组: [ /\.(js|css)$/, ... ]
+    "bannerOutputTypes": /\.(js|css)$/,
+    // 是否为插入的内容自动添加段落注释, 否则将原样输出
+    "bannerIsComment": true,
 
     // 事件回调
     "on": {
