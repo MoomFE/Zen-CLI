@@ -20,10 +20,10 @@ module.exports = {
     useSass: true,
     useLess: true,
 
-    builtInCss: false,
+    builtInCss: true,
     outputHtml: true,
 
-    forcedWrite: false
+    forcedWrite: true
   }
 
 }

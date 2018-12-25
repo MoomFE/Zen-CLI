@@ -17,6 +17,8 @@ module.exports = async function(){
     // console.log('Rollup 已解析配置完成 .');
   }
 
+  console.logEnd('打包开始 .')
+
   return [
     webpackCompilers,
     rollupCompilers
