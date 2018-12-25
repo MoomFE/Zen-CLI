@@ -161,11 +161,6 @@ Zen-CLI 是一个基于 webpack 的打包工具
       "cleanMatching": []
     },
 
-
-    // Zen-CLI 正在重构, 以下功能均不可用, 重构预计两天内完成
-
-    
-
     // 在打包好的文件的块的外部的最顶部插入的一段内容
     "banner": "",
     // 在指定类型文件插入内容
@@ -173,6 +168,10 @@ Zen-CLI 是一个基于 webpack 的打包工具
     "bannerOutputTypes": /\.(js|css)$/,
     // 是否为插入的内容自动添加段落注释, 否则将原样输出
     "bannerIsComment": true,
+
+
+    // Zen-CLI 正在重构, 以下功能均不可用, 重构预计两天内完成
+
 
     // 事件回调
     "on": {
