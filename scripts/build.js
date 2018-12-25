@@ -1,8 +1,7 @@
 
 
 module.exports = async function build(){
-  const configs = await require('./config')();
-  const webpackConfigs = configs.$findAll({ isWebpack: true });
+  const [ webpackConfigs, rollupConfigs ] = await require('./config')();
 
   const compilers = require('webpack')(
     webpackConfigs
