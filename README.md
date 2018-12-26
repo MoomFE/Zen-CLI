@@ -118,6 +118,10 @@ Zen-CLI 是一个基于 webpack 的打包工具
     // 解析 React 单文件组件 ( .jsx )
     "useReact": false,
 
+    // 项目使用了 Polymer 相关类库时使用
+    //   - 可以解决 Class constructor LitElement / PolymerElement cannot be invoked without 'new' 的问题
+    "usePolymer": false,
+
     // 解析 Less 文件 ( .less )
     "useLess": false,
 

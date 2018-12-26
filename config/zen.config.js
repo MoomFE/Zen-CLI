@@ -62,6 +62,8 @@ module.exports = {
 
     useReact: false,
 
+    usePolymer: false,
+
     useLess: false,
 
     useSass: false,

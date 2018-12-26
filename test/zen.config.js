@@ -11,19 +11,15 @@ module.exports = {
 
   config: {
     mode: false,
+    babel: true,
 
-    babel: false,
-
-    useTypeScript: true,
     useVue: true,
     useReact: true,
+    usePolymer: true,
     useSass: true,
     useLess: true,
 
-    builtInCss: false,
-    outputHtml: true,
-
-    forcedWrite: true
+    autoPolyfill: false
   }
 
 }
