@@ -1,14 +1,18 @@
+const console = require('../lib/console');
 
 
 module.exports = async function build(){
   const [ webpackCompilers, rollupConfigs ] = await require('./config')();
 
   if( webpackCompilers ){
-    webpackCompilers.run(( err, stats ) => {
-
+    webpackCompilers.run(( error, stats ) => {
+      if( error ){
+        console.error( error.stack )
+      }
     });
   }
 }
+
 // 测试是否可以同时执行 rollup 和 webpack 的打包
 // ( async () => {
 //   const configs = await require('./config')();
