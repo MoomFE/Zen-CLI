@@ -173,10 +173,6 @@ Zen-CLI 是一个基于 webpack 的打包工具
     // 是否为插入的内容自动添加段落注释, 否则将原样输出
     "bannerIsComment": true,
 
-
-    // Zen-CLI 正在重构, 以下功能均不可用, 重构预计两天内完成
-
-
     // 事件回调
     "on": {
       // webpack 配置文件创建完成后调用, 可对 webpack 配置进行修改

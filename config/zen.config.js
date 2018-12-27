@@ -19,7 +19,6 @@ module.exports = {
     entryFilename: 'index.js',
     outputFilename: 'index.js',
 
-
     rollup: false,
 
     babel: true,
@@ -33,29 +32,6 @@ module.exports = {
       outputPath: undefined
     },
 
-    outputHtml: false,
-    outputHtmlOptions: {},
-
-    banner: '',
-    bannerOutputTypes: /\.(js|css)$/,
-    bannerIsComment: true,
-
-    builtInCss: true,
-    Plugin_ExtractTextPluginOptions: {
-      filename: 'index.css',
-      allChunks: true
-    },
-
-    cleanOutputDir: false,
-    cleanOutputDirOptions: {
-      cleanAll: true,
-      cleanFile: true,
-      cleanDir: false,
-      cleanMatching: []
-    },
-
-    forcedWrite: true,
-
     useTypeScript: false,
 
     useVue: false,
@@ -67,6 +43,29 @@ module.exports = {
     useLess: false,
 
     useSass: false,
+
+    builtInCss: true,
+    Plugin_ExtractTextPluginOptions: {
+      filename: 'index.css',
+      allChunks: true
+    },
+
+    outputHtml: false,
+    outputHtmlOptions: {},
+
+    forcedWrite: true,
+
+    cleanOutputDir: false,
+    cleanOutputDirOptions: {
+      cleanAll: true,
+      cleanFile: true,
+      cleanDir: false,
+      cleanMatching: []
+    },
+
+    banner: '',
+    bannerOutputTypes: /\.(js|css)$/,
+    bannerIsComment: true,
 
     on: {
       ConfigCreated: null
