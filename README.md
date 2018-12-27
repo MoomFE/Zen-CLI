@@ -90,6 +90,8 @@ Zen-CLI 是一个基于 webpack 的打包工具
 
     // 使用 babel 编译 js 代码
     "babel": true,
+    // 使用自定义 babel 配置
+    "babelrc": null,
     // 是否根据 js 代码自动引入使用过的相应 polyfill
     //   - 需要 "babel" 选项为 true 时可用
     "autoPolyfill": true,
