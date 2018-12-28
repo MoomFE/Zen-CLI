@@ -89,14 +89,17 @@ Zen-CLI 是一个基于 webpack 的打包工具
     "rollup": false,
 
     // 使用 babel 编译 js 代码
+    //   - 值为假时, [ "babelrc", "autoPolyfill", "browserslist" ] 选项将不生效
     "babel": true,
     // 使用自定义 babel 配置
     "babelrc": null,
     // 是否根据 js 代码自动引入使用过的相应 polyfill
-    //   - 需要 "babel" 选项为 true 时可用
+    //   - "babel" 选项为 true 时可用
+    //   - 未配置 "babelrc" 选项时可用
     "autoPolyfill": true,
 
     // 兼容的最低浏览器
+    //   - 会用于 babel 和 postcss 用于转译代码
     "browserslist": [ "last 1 versions" ],
 
     // JS CSS 内的资源文件输出选项
