@@ -1,6 +1,6 @@
 {
   "name": "@moomfe/zen-cli",
-  "version": "1.0.0-beta.47",
+  "version": "1.0.0-beta.48",
   "description": "Zen-CLI 是一个基于 webpack 的打包工具",
   "scripts": {},
   "keywords": [],
