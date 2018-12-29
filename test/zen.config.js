@@ -4,7 +4,8 @@ module.exports = {
 
   pipe: [
     {
-      from: 'src/index.js',
+      rollup: true,
+      from: 'node_modules/@polymer/lit-element/lit-element.js',
       to: 'dist/index.js'
     }
   ],
@@ -15,7 +16,7 @@ module.exports = {
 
     useVue: true,
     useReact: true,
-    usePolymer: true,
+    // usePolymer: true,
     useSass: true,
     useLess: true,
 

@@ -25,6 +25,7 @@
       "jsconfig.json": true,
       "LICENSE": true,
       "test": true,
+      "tsconfig.json": true,
       "types": true
     }
   }
