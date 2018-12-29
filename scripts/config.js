@@ -13,8 +13,8 @@ module.exports = async function(){
   }
 
   if( rollupConfigs.length ){
-    // rollupCompilers = require('../lib/compiler/rollup')( rollupConfigs );
-    // console.log('Rollup 已解析配置完成 .');
+    rollupCompilers = require('../lib/compiler/rollup')( rollupConfigs );
+    console.log('Rollup 已解析配置完成 .');
   }
 
   console.logEnd('打包开始 .')

@@ -1,12 +1,18 @@
+const resolve = require('rollup-plugin-node-resolve');
+
 
 module.exports = {
 
-  output: {
-    
+  inputOptions: {
+    input: '',
+    plugins: [
+      resolve()
+    ]
   },
 
-  plugins: [
-
-  ]
+  outputOptions: {
+    file: '',
+    format: 'umd'
+  }
 
 }

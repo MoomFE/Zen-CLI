@@ -10,6 +10,10 @@ module.exports = async function build(){
         console.error( error.stack )
       }
     });
+  }else{
+    rollupConfigs.forEach( run => {
+      run();
+    });
   }
 }
 
