@@ -86,6 +86,10 @@ Zen-CLI 是一个基于 webpack 的打包工具
     /* ------  文件输入输出相关 - End ------ */
 
     // 使用 rollup 作为打包核心而不使用 webpack ( 开发中 )
+    //   - 目前可用属性:
+    //   - from, to, entry, output, entryFilename, outputFilename
+    //   - babel, babelrc, autoPolyfill, browserslist, format, name
+    //   - on
     "rollup": false,
 
     // 使用 babel 编译 js 代码
