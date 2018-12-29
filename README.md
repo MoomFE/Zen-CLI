@@ -102,6 +102,15 @@ Zen-CLI 是一个基于 webpack 的打包工具
     //   - 会用于 babel 和 postcss 用于转译代码
     "browserslist": [ "last 1 versions" ],
 
+    // 生成包的格式
+    //   - webpack: umd, commonjs, amd, this, var, assign, window, global, jsonp
+    //     - default: undefined
+    //   - rollup : umd, cjs, es, amd, iife
+    //     - default: umd
+    "format": undefined,
+    // 生成包的名称
+    "name": undefined,
+
     // JS CSS 内的资源文件输出选项
     //   - png, jpg, jpeg, gif, svg
     //   - woff, woff2, ttf, eot
