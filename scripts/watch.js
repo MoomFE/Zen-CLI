@@ -1,5 +1,4 @@
 const console = require('../lib/console');
-const path = require('path');
 
 
 let webpackWatching;
