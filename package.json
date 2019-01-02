@@ -47,6 +47,7 @@
     "rollup-plugin-node-resolve": "^4.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "terser": "^3.14.0",
     "terser-webpack-plugin": "^1.2.1",
     "to-string-loader": "^1.1.5",
     "uglify-js": "^3.4.9",

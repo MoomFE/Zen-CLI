@@ -10,6 +10,7 @@ module.exports = {
   ],
 
   config: {
+    mode: true,
     rollup: true
   }
 
