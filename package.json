@@ -1,6 +1,6 @@
 {
   "name": "@moomfe/zen-cli",
-  "version": "1.0.0-beta.52",
+  "version": "1.0.0-beta.53",
   "description": "Zen-CLI 是一个基于 webpack 的打包工具",
   "scripts": {},
   "keywords": [],
@@ -45,6 +45,7 @@
     "rollup": "^0.68.1",
     "rollup-plugin-babel": "^4.1.0",
     "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-terser": "^4.0.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "terser-webpack-plugin": "^1.2.1",
