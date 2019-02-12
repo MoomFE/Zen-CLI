@@ -11,7 +11,12 @@ module.exports = {
 
   config: {
     mode: true,
-    rollup: true
+    rollup: true,
+    on: {
+      WriteFile( webpackConfig, config, name, size ){
+        
+      }
+    }
   }
 
 }
