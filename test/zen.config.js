@@ -13,7 +13,7 @@ module.exports = {
     mode: true,
     rollup: true,
     on: {
-      WriteFile( webpackConfig, config, name, size ){
+      WriteFile( webpackConfig, config, name, size, gzipSize ){
         
       }
     }
