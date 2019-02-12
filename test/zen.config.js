@@ -14,7 +14,7 @@ module.exports = {
     rollup: true,
     on: {
       WriteFile( webpackConfig, config, name, size, gzipSize ){
-        
+        console.log( `name: ${ name }, size: ${ size }, gzipSize: ${ gzipSize }` )
       }
     }
   }
