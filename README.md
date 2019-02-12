@@ -197,7 +197,7 @@ Zen-CLI 是一个基于 webpack 的打包工具
       //   - ConfigCreated( WebpackConfig, ZenConfig )
       "ConfigCreated": null,
       // webpack 打包完成后写入文件时调用
-      //   - WriteFile( WebpackConfig, ZenConfig, name, size, gzipSize )
+      //   - WriteFile( WebpackConfig, ZenConfig, path, size, gzipSize )
       "WriteFile": null
     }
   }

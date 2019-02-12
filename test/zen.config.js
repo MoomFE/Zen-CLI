@@ -13,8 +13,8 @@ module.exports = {
     mode: true,
     rollup: true,
     on: {
-      WriteFile( webpackConfig, config, name, size, gzipSize ){
-        console.log( `name: ${ name }, size: ${ size }, gzipSize: ${ gzipSize }` )
+      WriteFile( webpackConfig, config, path, size, gzipSize ){
+        console.log( `path: ${ path }, size: ${ size }, gzipSize: ${ gzipSize }` )
       }
     }
   }
