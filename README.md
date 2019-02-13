@@ -127,6 +127,11 @@ Zen-CLI 是一个基于 webpack 的打包工具
       "outputPath": undefined
     },
 
+    // JS 压缩选项
+    //   - 将会传递给 terser 作为压缩选项
+    //   - "mode" 选项为 "production" 时可用
+    "terserOptions": null,
+
     // 解析 TypeScript 文件 ( .ts )
     "useTypeScript": false,
 
