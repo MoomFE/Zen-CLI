@@ -22,6 +22,7 @@ module.exports = {
     rollup: false,
 
     babel: true,
+    babelrc: null,
     autoPolyfill: true,
 
     browserslist: [ 'last 1 versions' ],
@@ -34,6 +35,10 @@ module.exports = {
       name: '[name].[ext]',
       outputPath: undefined
     },
+
+    replace: {},
+
+    terserOptions: null,
 
     useTypeScript: false,
 
@@ -71,7 +76,8 @@ module.exports = {
     bannerIsComment: true,
 
     on: {
-      ConfigCreated: null
+      ConfigCreated: null,
+      WriteFile: null
     }
 
   }

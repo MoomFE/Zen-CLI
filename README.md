@@ -89,7 +89,7 @@ Zen-CLI 是一个基于 webpack 的打包工具
     //   - 目前可用属性:
     //   - mode, from, to, entry, output, entryFilename, outputFilename
     //   - babel, babelrc, autoPolyfill, browserslist, format, name
-    //   - on
+    //   - terserOptions, replace, on
     "rollup": false,
 
     // 使用 babel 编译 js 代码
@@ -126,6 +126,10 @@ Zen-CLI 是一个基于 webpack 的打包工具
       // 自定义输出目录 ( 相对路径 )
       "outputPath": undefined
     },
+
+    // 替换字符串
+    //   - 比如: { 'process.env.NODE_ENV': JSON.stringify('production') }
+    "replace": {},
 
     // JS 压缩选项
     //   - 将会传递给 terser 作为压缩选项
