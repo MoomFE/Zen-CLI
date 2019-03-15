@@ -89,7 +89,7 @@ Zen-CLI 是一个基于 webpack 的打包工具
     //   - 目前可用属性:
     //   - mode, from, to, entry, output, entryFilename, outputFilename
     //   - babel, babelrc, autoPolyfill, browserslist, format, name
-    //   - terserOptions, replace, on
+    //   - terserOptions, replace, on, banner, bannerIsComment
     "rollup": false,
 
     // 使用 babel 编译 js 代码
